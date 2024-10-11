@@ -16,35 +16,43 @@ use App\Http\Controllers\controladorBlock;
 |
 */
 //Ruta para inicio
-Route::get('/', 
+Route::get('/',
     function () {
         return view('inicioGatoNegro');
     }
 )->name("inicio");
 
 //Ruta para nosotros
-Route::get('/nosotros', 
+Route::get('/nosotros',
     function () {
         return view('nosotros');
     }
 )->name("sobrenosotros");
 
+//Ruta para nosotros
+Route::get('/nosotros',
+    function () {
+        return view('nosotros');
+    }
+)->name("sobrenosotros");
+
+
 //Ruta para servicios
-Route::get('/servicios', 
+Route::get('/servicios',
     function () {
         return view('Servicio/Servicios');
     }
 )->name("servicios");
 
 //Ruta para productos
-Route::get('/productos', 
+Route::get('/productos',
     function () {
         return view('Producto/Productos');
     }
 )->name("productos");
 
 //Ruta para contactanos
-Route::get('/contactanos', 
+Route::get('/contactanos',
     function () {
         return view('Contactanos');
     }
@@ -52,28 +60,28 @@ Route::get('/contactanos',
 
 
 //Ruta para olvidar contraseña
-Route::get('/olvidarcontraseña', 
+Route::get('/olvidarcontraseña',
     function () {
         return view('Usuario/olvidarC');
     }
 )->name("olvidarcontraseña");
 
 //Ruta para registrar usuario
-Route::get('/registrarusuario', 
+Route::get('/registrarusuario',
     function () {
         return view('Usuario/registrarU');
     }
 )->name("registrarusuario");
 
 //Rutas para Usuario
-Route::get('/login', 
+Route::get('/login',
     function () {
         return view('Usuario/login');
     }
 )->name("login");
 
 //Rutas para Usuario
-Route::get('/restablecerContraseña', 
+Route::get('/restablecerContraseña',
     function () {
         return view('Usuario/reestablecer');
     }
