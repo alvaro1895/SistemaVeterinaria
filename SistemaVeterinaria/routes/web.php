@@ -15,26 +15,14 @@ use App\Http\Controllers\controladorBlock;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 //Ruta para inicio
 Route::get('/',
-<<<<<<< HEAD
-=======
     function () {
         return view('inicioGatoNegro');
     }
 )->name("inicio");
 
-<<<<<<< HEAD
-=======
-//Ruta para inicio
-Route::get('/',
->>>>>>> a35b22436457b6c5b0d4b7821e150bbd452f097a
-    function () {
-        return view('inicioGatoNegro');
-    }
-)->name("inicio");
-
->>>>>>> a771e57331d76c0545deba377e8f1fa53317850b
 //Ruta para nosotros
 Route::get('/nosotros',
     function () {
