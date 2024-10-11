@@ -22,13 +22,6 @@ Route::get('/',
     }
 )->name("inicio");
 
-//Ruta para inicio
-Route::get('/',
-    function () {
-        return view('inicioGatoNegro');
-    }
-)->name("inicio");
-
 //Ruta para nosotros
 Route::get('/nosotros',
     function () {
