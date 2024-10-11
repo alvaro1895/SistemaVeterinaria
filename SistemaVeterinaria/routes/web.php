@@ -22,12 +22,12 @@ Route::get('/',
     }
 )->name("inicio");
 
-//Ruta para nosotros
-Route::get('/nosotros',
+//Ruta para inicio
+Route::get('/',
     function () {
-        return view('nosotros');
+        return view('inicioGatoNegro');
     }
-)->name("sobrenosotros");
+)->name("inicio");
 
 //Ruta para nosotros
 Route::get('/nosotros',
