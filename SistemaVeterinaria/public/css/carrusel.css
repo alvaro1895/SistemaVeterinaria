@@ -1,0 +1,167 @@
+/* Carrusel de imágenes */
+.carrousel {
+    width: 100%;
+}
+
+.conteCarrousel {
+    width: 100%;
+    height: 600px; /* Altura del carrusel, ajusta según sea necesario */
+    overflow: hidden;
+    position: relative; /* Necesario para el posicionamiento absoluto dentro */
+}
+
+.itemCarrousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none; /* Oculta todos los elementos por defecto */
+}
+
+.itemCarrousel.active {
+    display: block; /* Muestra solo el elemento activo */
+}
+
+.itemCarrouselTarjeta {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.itemCarrouselTarjeta img {
+    width: 100%; /* Asegura que la imagen ocupe el ancho completo del contenedor */
+    height: 100%; /* Asegura que la imagen ocupe la altura completa del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
+}
+
+/* Muestra solo el elemento activo izquierda primera imagen*/
+.textOverlay1 {
+    position: absolute; /* Posiciona el texto en relación con el contenedor padre */
+    bottom: 250px; /* Desplaza el texto 10px desde la parte inferior del contenedor */
+    left: 100px; /* Desplaza el texto 10px desde la parte derecha del contenedor */
+    color: yellow; /* Color del texto */
+    font-size: 44px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+    z-index: 10; /* Asegura que el texto esté por encima de la imagen */
+    text-align: left; /* Alinea el texto a la derecha */
+}
+
+/* Muestra solo el elemento activo derecha segunda imagen*/
+.textOverlay21 {
+    position: absolute; /* Posiciona el texto en relación con el contenedor padre */
+    bottom: 300px; /* Desplaza el texto 10px desde la parte inferior del contenedor */
+    right: 245px; /* Desplaza el texto 10px desde la parte derecha del contenedor */
+    color: yellow; /* Color del texto */
+    font-size: 34px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+    z-index: 10; /* Asegura que el texto esté por encima de la imagen */
+    text-align: right; /* Alinea el texto a la derecha */
+}
+.textOverlay22 {
+    position: absolute; /* Posiciona el texto en relación con el contenedor padre */
+    bottom: 260px; /* Desplaza el texto 10px desde la parte inferior del contenedor */
+    right: 180px; /* Desplaza el texto 10px desde la parte derecha del contenedor */
+    color: yellow; /* Color del texto */
+    font-size: 34px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+    z-index: 10; /* Asegura que el texto esté por encima de la imagen */
+    text-align: right; /* Alinea el texto a la derecha */
+}
+.textOverlay23 {
+    position: absolute; /* Posiciona el texto en relación con el contenedor padre */
+    bottom: 220px; /* Desplaza el texto 10px desde la parte inferior del contenedor */
+    right: 160px; /* Desplaza el texto 10px desde la parte derecha del contenedor */
+    color: yellow; /* Color del texto */
+    font-size: 34px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+    z-index: 10; /* Asegura que el texto esté por encima de la imagen */
+    text-align: right; /* Alinea el texto a la derecha */
+}
+
+/* Muestra solo el elemento activo derecha tercera imagen*/
+.textOverlay31 {
+    position: absolute; /* Posiciona el texto en relación con el contenedor padre */
+    bottom: 300px; /* Desplaza el texto 10px desde la parte inferior del contenedor */
+    right: 215px; /* Desplaza el texto 10px desde la parte derecha del contenedor */
+    color: yellow; /* Color del texto */
+    font-size: 34px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+    z-index: 10; /* Asegura que el texto esté por encima de la imagen */
+    text-align: right; /* Alinea el texto a la derecha */
+}
+.textOverlay32 {
+    position: absolute; /* Posiciona el texto en relación con el contenedor padre */
+    bottom: 260px; /* Desplaza el texto 10px desde la parte inferior del contenedor */
+    right: 215px; /* Desplaza el texto 10px desde la parte derecha del contenedor */
+    color: yellow; /* Color del texto */
+    font-size: 34px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+    z-index: 10; /* Asegura que el texto esté por encima de la imagen */
+    text-align: right; /* Alinea el texto a la derecha */
+}
+.textOverlay33 {
+    position: absolute; /* Posiciona el texto en relación con el contenedor padre */
+    bottom: 220px; /* Desplaza el texto 10px desde la parte inferior del contenedor */
+    right: 200px; /* Desplaza el texto 10px desde la parte derecha del contenedor */
+    color: yellow; /* Color del texto */
+    font-size: 34px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+    z-index: 10; /* Asegura que el texto esté por encima de la imagen */
+    text-align: right; /* Alinea el texto a la derecha */
+}
+
+.itemCarrouselArrows {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Ajusta el padding si es necesario */
+}
+
+.itemCarrouselArrows button {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: black;
+    font-size: 2em; /* Ajusta el tamaño de las flechas si es necesario */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+.itemCarrouselArrows button:focus {
+    outline: none; /* Sin borde de enfoque */
+}
+
+.conteCarrouselController {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Espacio entre el carrusel y los controles */
+}
+
+.conteCarrouselController > a {
+    text-decoration: none;
+    font-size: 2em;
+    color: grey;
+    margin: 0 5px; /* Espacio entre los puntos de control */
+}
+
+#itemCarrousel-1 {
+    background-color: rgb(226, 50, 50);
+}
+
+#itemCarrousel-2 {
+    background-color: rgb(50, 200, 226);
+}
+
+#itemCarrousel-3 {
+    background-color: rgb(200, 226, 50);
+}

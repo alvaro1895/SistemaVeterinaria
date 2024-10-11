@@ -1,0 +1,38 @@
+/* Estilos para la tabla */
+table.ini {
+    width: 80%; /* Aumenta el ancho de la tabla al 80% del contenedor */
+    margin: 0 auto; /* Centra la tabla horizontalmente en la página */
+    border-collapse: collapse; /* Colapsa los bordes de las celdas para que se vean como un solo borde */
+    text-align: center; /* Centra el texto en las celdas */
+    border: 10px solid transparent; /* Hace que el borde sea invisible */
+    /*border: 10px solid black;*/
+    border-radius: 50px; /* Hace que el borde sea circular */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde del borde circular */
+}
+
+/* Estilos para las celdas de la tabla */
+table.ini th,
+table.ini td {
+    border: 10px solid transparent; /* Hace que los bordes de las celdas sean invisibles */
+    /* border: 10px solid black;*/
+    padding: 10px; /* Agrega un relleno de 10px dentro de las celdas */
+}
+
+/* Estilos para las imágenes dentro de las celdas */
+table.ini td img {
+    display: block; /* Hace que la imagen se comporte como un bloque, permitiendo centrarla */
+    margin: 0 auto 10px; /* Centra la imagen horizontalmente y agrega un margen de 10px en la parte inferior */
+    max-width: 100%; /* Limita el ancho máximo de la imagen al 100% del ancho de la celda */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    transition: transform 0.3s ease; /* Añade una transición suave para el efecto de salto */
+}
+
+table.ini td img:hover {
+    transform: translateY(-10px); /* Hace que la imagen salte 10px hacia arriba cuando se pasa el cursor por encima */
+}
+
+/* Estilo para los textos dentro de las celdas */
+table.ini td span {
+    display: block; /* Hace que los textos sean bloques para que se apilen verticalmente */
+    margin-top: 5px; /* Agrega un margen superior de 5px entre el texto y otros elementos */
+}

@@ -1,0 +1,44 @@
+
+/* Estilos */
+.login-container {
+    background-color: #1a1a1a; /* Color de fondo oscuro para la caja del formulario */
+    padding: 40px; /* Espaciado interno alrededor de todo el contenedor */
+    border-radius: 8px; /* Bordes redondeados para darle un aspecto suave */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra suave para hacer que el contenedor resalte */
+    width: 80%; /* Agrega este estilo para que la caja de inicio de sesión ocupe el 80% del ancho de la página */
+    margin: 0 auto; /* Centra la caja de inicio de sesión horizontalmente */
+}
+.login-header {
+    display: flex; /* Uso de flexbox para alinear los elementos del encabezado */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos dentro del contenedor */
+    margin-bottom: 30px; /* Espaciado inferior entre el encabezado y el formulario */
+}
+.login-image {
+    width: 80px; /* Ancho de la imagen del logo */
+    height: 80px; /* Altura de la imagen del logo */
+    margin-right: 20px; /* Espacio a la derecha de la imagen para separarla del texto */
+}
+.login-form {
+    display: flex; /* Flexbox para organizar los elementos dentro del formulario */
+    flex-direction: column; /* Los elementos se apilan verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+}
+.login-input {
+    width: 300px; /* Ancho de los campos de entrada */
+    padding: 10px; /* Espaciado interno para que el texto no toque los bordes */
+    margin-bottom: 20px; /* Espaciado inferior entre los campos */
+    border-radius: 4px; /* Bordes ligeramente redondeados para los campos */
+    border: 1px solid #ccc; /* Color de borde claro */
+    background-color: #2c2c2c; /* Fondo oscuro para los campos de entrada */
+    color: #fff; /* Color blanco para el texto */
+}
+.login-button {
+    width: 300px; /* Ancho del botón */
+    padding: 10px; /* Espaciado interno para que el texto no toque los bordes */
+    background-color: #3d4044; /* Color de fondo azul del botón */
+    color: #fff; /* Color blanco para el texto del botón */
+    border: none; /* Sin borde para un diseño limpio */
+    border-radius: 4px; /* Bordes redondeados para el botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}

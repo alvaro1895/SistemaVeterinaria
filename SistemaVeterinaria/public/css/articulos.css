@@ -1,0 +1,33 @@
+
+.editor-styles-wrapper, .entry-content{
+    counter-reset: footnotes;
+}
+.justificado {
+    text-align: justify; /* Justifica el texto */
+}
+
+/* Estilos generales para centrar contenido */
+.content-container {
+    display: flex;               /* Usamos flexbox */
+    flex-direction: column;      /* Organiza el contenido en columna (uno debajo del otro) */
+    align-items: center;         /* Centra horizontalmente */
+    justify-content: center;     /* Centra verticalmente, si es necesario */
+    text-align: center;          /* Centra el texto dentro de sus contenedores */
+    height: 100vh;               /* Ajusta la altura al 100% de la pantalla (opcional si quieres centrar en toda la pantalla) */
+}
+
+.image {
+    max-width: 100%;             /* Asegura que la imagen no se desborde fuera del contenedor */
+    height: auto;                /* Mantiene la proporción de la imagen */
+}
+
+/* Opcional: Ajusta el ancho máximo del contenido para evitar que se estire demasiado */
+.entry-content {
+    max-width: 600px;            /* Limita el ancho máximo del texto */
+    margin: 20px;                /* Añade un margen alrededor del texto */
+}
+
+.left-align {
+    text-align: left;  /* Alinea solo los títulos y párrafos a la izquierda */
+    margin-left: 0;    /* Asegura que no tengan margen adicional en la izquierda */
+}

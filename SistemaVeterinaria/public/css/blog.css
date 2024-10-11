@@ -1,0 +1,122 @@
+
+        /*.hidden {
+            display: none;  Esta propiedad oculta el elemento 
+        }*/
+
+        .justificado {
+            text-align: justify; /* Justifica el texto */
+        }
+        
+        /* Estilo general del cuerpo */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        /* Estilo del título del blog */
+        h1 {
+            text-align: center;
+            margin: 20px;
+            color: #333;
+        }
+        /* Estilos para la tabla */
+        table {
+            width: 80%;
+            margin: 0 auto; /* Centrar la tabla */
+            border-collapse: collapse; /* Evitar separación entre bordes */
+        }
+        /* Estilos de las celdas de la tabla */
+        td, th {
+            border: 0px solid #ddd; /* Bordes de las celdas */
+            padding: 10px;
+            text-align: center;
+        }
+        /* Estilo para las imágenes dentro de la tabla */
+        .img-edit {
+            width: 500px; /* Ancho fijo para todas las imágenes */
+            height: 500px; /* Altura fija para todas las imágenes */
+            object-fit: cover; /* Mantiene la proporción sin deformar la imagen */
+            border-radius: 10px; /* Redondear las imágenes */
+            cursor: pointer; /* Cursor al pasar el mouse sobre la imagen */
+            border: 2px solid #ccc; /* Borde de las imágenes */
+            transition: transform 0.3s ease; /* Efecto de transición para la rotación */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto de sombra en las imágenes */
+        }
+
+        /* Transparencia al pasar el cursor por la imagen */
+        .img-edit:hover {
+            opacity: 0.5; /* Hace la imagen un 50% transparente al pasar el cursor */
+        }
+        /* Estilo de los enlaces en los títulos */
+        a {
+            text-decoration: none; /* Eliminar subrayado */
+            color: #060303; /* Color del enlace */
+            font-weight: bold; /* Negrita en el texto */
+        }
+        a:hover {
+            text-decoration: underline; /* Subrayar el enlace al pasar el mouse */
+            color: #89969d; /* Cambiar color al pasar el mouse */
+        }
+
+                /* Estilo del botón "Cargar más" */
+                #loadMore {
+                    display: block;
+                    margin: 20px auto;
+                    padding: 10px 20px;
+                    background-color: #007BFF;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+        
+                #loadMore:hover {
+                    background-color: #0056b3;
+                }
+        
+                /* Estilo para ocultar las filas inicialmente */
+                .hidden {
+                    display: none;
+                }
+
+
+
+/*estrusctura del blog*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+.container {
+    width: 80%;   /* */
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: white;
+}
+.header-title {     /* */
+    color: #333;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.main-image {
+    width: 100%; /* */
+    height: auto;
+}
+.content {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+.content h3 {
+    color: #800080;
+    font-weight: bold;
+    font-size: 24px;
+}
+.content p {
+    text-align: justify;
+}

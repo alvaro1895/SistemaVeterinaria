@@ -1,0 +1,52 @@
+/* Estilos generales para centrar todo */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - 80px); /* Asegura que el contenido esté centrado verticalmente, restando la altura del nav */
+    padding-top: 80px; /* Agrega espacio arriba para evitar la superposición del nav */
+}
+
+/* Estilos para el formulario */
+form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los inputs y el botón */
+input[type="text"], input[type="submit"] {
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 300px; /* Ajuste de ancho */
+}
+
+/* Estilos para la tabla */
+table {
+    width: 80%; /* Ajuste del ancho de la tabla */
+    margin: 20px auto; /* Centra la tabla horizontalmente */
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilo para el botón "Eliminar" dentro de la tabla */
+table input[type="submit"] {
+    border: none;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+table input[type="submit"]:hover {
+    background-color: darkred;
+}

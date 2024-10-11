@@ -1,0 +1,272 @@
+/* Reseteo de estilos básicos */
+* {
+    padding: 0; /* Elimina el relleno predeterminado de todos los elementos */
+    margin: 0; /* Elimina el margen predeterminado de todos los elementos */
+    text-decoration: none; /* Elimina cualquier subrayado o decoración de texto predeterminada en enlaces */
+    list-style: none; /* Elimina los estilos de lista predeterminados (como viñetas) en listas */
+    box-sizing: border-box; /* Incluye padding y border en el ancho y alto de los elementos */
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el contenedor del menú de navegación */
+nav {
+    font-family: Arial, Helvetica, sans-serif ;/* Aplica la fuente 'Montserrat' a todo el texto del documento */
+    background-color:  #333333; /* Establece el color de fondo del contenedor de navegación */
+    height: 80px; /* Fija la altura del contenedor de navegación */
+    width: 100%; /* Hace que el contenedor de navegación ocupe todo el ancho de la pantalla */
+    display: flex; /* Usa flexbox para alinear los elementos dentro del contenedor de navegación */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor de navegación */
+    padding: 0 20px; /* Agrega un espacio interno de 20px a los lados del contenedor de navegación */
+    position: fixed; /* Posiciona el elemento en relación con su posición original en el flujo del documento.
+     Permite ajustes con top, right, bottom y left sin alterar el espacio ocupado. */
+     top:0;
+     z-index: 1000;
+
+}
+
+/* Estilos para el logo */
+.nav-header img.log {
+    height: 70px; /* Ajusta el tamaño del logo */
+    margin-top: 10px; /* Espacio superior, ajusta según sea necesario */
+    margin-right: 30px; /* Agrega un espacio a la derecha del logo */
+
+}
+
+/* Estilos para el texto del logo */
+label.logo {
+    color: black; /* Establece el color del texto del logo en negro */
+    font-size: 35px; /* Fija el tamaño de la fuente del logo a 35px */
+    line-height: 80px; /* Establece la altura de línea del logo para alinearlo verticalmente dentro del contenedor */
+    font-weight: bold; /* Aplica un estilo de texto en negrita al logo */
+    margin-right: 20px; /* Agrega un espacio a la derecha del texto del logo */
+}
+
+/* Estilos para la lista de navegación */
+nav ul {
+    display: flex; /* Usa flexbox para alinear horizontalmente los elementos de la lista */
+    margin-left: auto; /* Empuja la lista de navegación hacia la derecha */
+}
+
+nav ul li {
+    display: inline-block; /* Hace que cada elemento de la lista se alinee en línea y se comporte como un bloque */
+    line-height: 80px; /* Establece la altura de línea para alinear los elementos verticalmente dentro del contenedor de navegación */
+    margin: 0 5px; /* Agrega un margen de 5px a cada lado de los elementos de la lista */
+}
+
+nav ul li a {
+    color: black; /* Establece el color del texto de los enlaces en negro */
+    font-size: 17px; /* Fija el tamaño de la fuente de los enlaces a 17px */
+    padding: 7px 13px; /* Agrega un relleno interno alrededor del texto de los enlaces */
+    border-radius: 20px; /* Redondea las esquinas del fondo de los enlaces */
+    text-transform: uppercase; /* Convierte el texto de los enlaces a mayúsculas */
+    font-weight: bold; /* Aplica un estilo de texto en negrita a los enlaces */
+    transition: background 0.3s, border-radius 0.3s; /* Agrega una transición suave para el color de fondo y el borde redondeado cuando se interactúa con el enlace */
+}
+
+/* Estilo para enlaces con la clase active */
+a.active {
+    color: yellow; /* Cambia el color del texto a amarillo */
+    background-color: black;
+    transition: .8s; /* Transición suave */
+}
+
+/* Estilo para cuando el cursor pasa sobre enlaces con la clase active */
+a.active:hover {
+    background-color: yellow; /* Fondo amarillo solo al pasar el cursor */
+    color: black; /* Mantiene el texto blanco al pasar el cursor */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño para dar un efecto de resalte */
+}
+
+/* Estilo específico para el enlace dentro del label */
+nav label.logo a.gatonegro {
+    color: black; /* Color del texto del enlace en negro */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    font-weight: bold; /* Texto en negrita */
+    background: none; /* Elimina cualquier fondo */
+    transition: none; /* Desactiva las transiciones */
+}
+
+h1.venta{
+   
+    font-weight: bold;
+    text-align: center;
+}
+
+
+h3.name {
+    transition: color 0.3s ease, outline 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+h3.name:hover {
+    background-color: black; /* Cambia el fondo a amarillo al pasar el cursor */
+    color: yellow; /* Cambia el texto a negro al pasar el cursor */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño para dar un efecto de resalte */
+    outline: 2px solid black; /* Agrega un contorno negro */
+}
+
+
+/* Estilo para la sección de "Sobre Nosotros" */
+.nosotros-section {
+    width: 100%; /* Ocupa todo el ancho de la página */
+    background-color: #d3d3d3; /* Fondo color plomo claro */
+    padding: 40px; /* Espaciado interno de la tabla */
+    border-spacing: 20px; /* Espacio entre las celdas de la tabla */
+    text-align: justify; /* Alinea el texto en ambas márgenes */
+}
+
+/* Estilo para la columna de texto */
+.nosotros-text {
+    color: black; /* Texto en color blanco */
+    font-size: 24px; /* Tamaño de fuente */
+    line-height: 1.6; /* Espaciado entre líneas */
+    vertical-align: top; /* Alinea el texto al principio de la celda */
+}
+
+/* Estilo para la columna de imagen */
+.nosotros-image img {
+    width: 100%; /* La imagen ocupa todo el ancho de la celda */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+}
+
+/* Estilo para la sección de "Sobre Servicios" */
+.servicios-section {
+    width: 100%; /* Ocupa todo el ancho de la página */
+    background-color: #d3d3d3; /* Fondo color plomo claro */
+    padding: 40px; /* Espaciado interno de la tabla */
+    border-spacing: 20px; /* Espacio entre las celdas de la tabla */
+    text-align: justify; /* Alinea el texto en ambas márgenes */
+}
+
+/* Estilo para la columna de texto */
+.servicios-text {
+    color: black; /* Texto en color blanco */
+    font-size: 24px; /* Tamaño de fuente */
+    line-height: 1.6; /* Espaciado entre líneas */
+    vertical-align: top; /* Alinea el texto al principio de la celda */
+}
+
+/* Estilo para la columna de imagen */
+.servicios-image img {
+    
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    width: 130px; /* Ancho fijo de 300 píxeles */
+    height: 130px; /* Altura fija de 200 píxeles */
+}
+
+
+/* Estilo para la sección de "Visita" */
+/* Estilo general para la tabla */
+.info-table {
+    width: 80%; /* Ajusta el ancho de la tabla para que no ocupe todo el ancho de la página */
+    margin: 0 auto; /* Centra la tabla horizontalmente */
+    border-spacing: 20px; /* Espacio entre las celdas para que no estén tan juntas */
+}
+
+/* Estilo para las celdas de la tabla */
+.info-table td {
+    vertical-align: top; /* Alinea el contenido al principio de la celda */
+    padding: 10px; /* Relleno interno para dar espacio dentro de las celdas */
+    display: flex; /* Usa flexbox para alinear la imagen y el texto */
+    align-items: flex-start; /* Alinea la imagen y el texto en la parte superior */
+    color: black; /* Color del texto */
+}
+
+/* Estilo para las imágenes dentro de las celdas */
+.info-table img {
+    width: 50px; /* Ajusta el tamaño de las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 15px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo para los contenedores de texto */
+.text-container {
+    max-width: calc(100% - 65px); /* Asegura que el texto no sobrepase el espacio disponible junto a la imagen */
+}
+
+/* Estilo para los títulos */
+.info-table h2 {
+    font-size: 24px; /* Tamaño de fuente para los títulos */
+    margin: 0 0 10px 0; /* Espaciado debajo del título */
+    color: black; /* Color negro para los títulos */
+}
+
+/* Estilo para los párrafos */
+.info-table p {
+    font-size: 16px; /* Tamaño de fuente para el texto */
+    margin: 0; /* Elimina el margen alrededor del texto */
+    color: black; /* Color negro para el texto */
+}
+
+/* Estilo general para la tabla visita*/
+.visita-section {
+    width: 80%; /* Ajusta el ancho de la tabla para centrarla */
+    margin: 0 auto; /* Centra la tabla horizontalmente */
+    border-spacing: 20px; /* Espacio entre las celdas */
+}
+/* Estilo para el título de la sección */
+.section-title {
+    text-align: center; /* Centra el texto */
+    font-size: 44px; /* Tamaño de la letra del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    color: black; /* Color del título */
+}
+/* Estilo para las celdas de la tabla visita */
+.visita-section td {
+    vertical-align: top; /* Alinea el contenido al principio de la celda */
+    padding: 10px; /* Relleno interno */
+    display: flex; /* Flexbox para organizar la imagen y el texto */
+    align-items: flex-start; /* Alinea la imagen y el texto en la parte superior */
+    color: black; /* Color del texto */
+}
+
+/* Estilo para las imágenes */
+.visita-section img {
+    width: 50px; /* Tamaño de la imagen */
+    height: auto; /* Mantiene la proporción */
+    margin-right: 15px; /* Espacio entre la imagen y el texto */
+}
+
+/* Contenedor de texto */
+.visita-text {
+    max-width: calc(100% - 65px); /* Espacio para el texto */
+}
+
+/* Estilo para los títulos */
+.visita-section h2 {
+    font-size: 34px; /* Tamaño de los títulos */
+    margin: 0 0 10px 0; /* Espaciado debajo del título */
+    color: black; /* Color del título */
+}
+
+/* Estilo para el texto */
+.visita-section p {
+    font-size: 24px; /* Tamaño del texto */
+    margin: 0; /* Elimina el margen alrededor del texto */
+    color: black; /* Color del texto */
+}
+
+/* Estilo para enlaces con la clase active2 */
+a.active2 {
+    color: yellow; /* Texto de color amarillo */
+    background-color: black; /* Fondo negro */
+    transition: all 0.3s ease; /* Transición más rápida y suave */
+    font-size: 20px; /* Tamaño del texto */
+    padding: 7px 50px; /* Relleno interno para que el enlace sea más clickeable */
+    border-radius: 20px; /* Bordes redondeados */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    display: inline-block; /* Asegura que los padding y border-radius se apliquen correctamente */
+}
+
+/* Efecto al pasar el cursor */
+a.active2:hover {
+    background-color:yellow; /* Cambia el fondo a amarillo al pasar el cursor */
+    color: black; /* Cambia el texto a negro al pasar el cursor */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño para dar un efecto de resalte */
+}
+
+
