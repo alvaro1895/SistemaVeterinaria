@@ -30,14 +30,6 @@ Route::get('/nosotros',
     }
 )->name("sobrenosotros");
 
-//Ruta para nosotros
-Route::get('/nosotros',
-    function () {
-        return view('nosotros');
-    }
-)->name("sobrenosotros");
-
-
 //Ruta para servicios
 Route::get('/servicios',
     function () {
