@@ -16,24 +16,28 @@
 <body>
     
 
-    <br><br><br><br><br><br>
+<br>
 
-<h1 class="venta"> Registro de Usuario</h1>
+<!--<h1 class="venta"> Registro de Usuario</h1>-->
         <div class="login-container">
             <div class="login-header">
                 <img src="\img\logo2.png" alt="Gato Negro" class="login-image">           
             </div> 
-            <form class="login-form" action="\" method="get"> 
-                <label for="texto" style="color:white">Ingrese sus datos:</label><br>    
+            <form class="login-form" action="{{route("registrarUsuario")}}" method="post"> 
+                @csrf
+                <label for="texto" style="color:white">Ingrese sus datos:</label>
+                <br>    
                 <div>
                     <input type="text" name="nombre" placeholder="Nombre" class="login-input1" required >
                     <input type="text" name="apellido" placeholder="Apellido" class="login-input1" required>
-                </div>                
+                </div>  
+                       
                 <input type="tel" name="telefono" placeholder="Teléfono" class="login-input" required><br>
-                <input type="email" name="email" placeholder="Email" class="login-input" required><br>
+                <input type="email" name="email" placeholder="Correo" class="login-input" required><br>
                 <input type="password" name="password" placeholder="Contraseña" class="login-input" required><br>
                 <input type="password" name="confirm-password" placeholder="Confirmar contraseña" class="login-input" required>
-    <br>
+                
+                <br>
                 <div>
                     <input type="checkbox" name="terms" id="terms" required>
                     <label style="color:white" for="terms">Yo acepto los <a href="#" class="register-user" target="_blank">Términos y Condiciones</a></label>
@@ -44,7 +48,6 @@
                 <button type="submit" class="login-button">Registrarse ahora</button>          
             </form>
         </div>
-<br>
 <br>
 
     <!--Codigo JS abajo (ponerlos todos ahi. sino fallan)-->

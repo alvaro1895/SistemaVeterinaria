@@ -42,7 +42,7 @@
         <div class="nav-header">
             <img class="log" src="..\img\login.png" alt="logoempresa" usemap="#login">
             <map name="login">
-                <area shape="circle" coords="1253,132,1321" href="..\html\login.html" alt="">
+                <area shape="circle" coords="1253,132,1321" href="{{route('cerrarSesion')}}" alt="">
             </map>
         </div>
     </ul>

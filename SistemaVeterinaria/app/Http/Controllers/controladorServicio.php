@@ -27,6 +27,7 @@ class controladorServicio extends Controller
         $servicio->nombreServ = $request->input('servicio');
         $servicio->descripcionServ = $request->input('descripcion');
         $servicio->precioServ = $request->input('precio');
+        
         $servicio->save();
 
         return redirect()->route('agregarServicio');     
