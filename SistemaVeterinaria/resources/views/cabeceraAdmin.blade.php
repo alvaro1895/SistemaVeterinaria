@@ -36,11 +36,12 @@
         <li><a class="active" href="..\html\TablaUsuario.html">Gestión Usuarios</a></li>
         <li><a class="active" href="..\html\TablaServicio.html">Gestión Servicios</a></li>
         <li><a class="active" href="..\html\TablaProductos.html">Gestión Productos</a></li>
+        <li><a class="active" href="..\html\TablaUsuario.html">Gestión Reserva</a></li>
         <li><a class="active" href="..\html\gatonegro.html">Cerrar Admin</a></li>
 
 
         <div class="nav-header">
-            <img class="log" src="..\img\login.png" alt="logoempresa" usemap="#login">
+            <img class="log" src="\img\login.png" alt="logoempresa" usemap="#login">
             <map name="login">
                 <area shape="circle" coords="1253,132,1321" href="{{route('cerrarSesion')}}" alt="">
             </map>
