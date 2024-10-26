@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\controladorLogin;
 use App\Http\Controllers\controladorServicio;
 use App\Http\Controllers\controladorProducto;
 use App\Http\Controllers\controladorBlock;
@@ -15,6 +17,7 @@ use App\Http\Controllers\controladorBlock;
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< HEAD
 //Ruta para inicio
 Route::get('/',
     function () {
@@ -28,60 +31,40 @@ Route::get('/nosotros',
         return view('nosotros');
     }
 )->name("sobrenosotros");
+=======
 
+//Ruta para vista inicio
+Route::view('/', 'inicioGatoNegro')->name("inicio");
 
-//Ruta para servicios
-Route::get('/servicios',
-    function () {
-        return view('Servicio/Servicios');
-    }
-)->name("servicios");
+//Ruta para vista nosotros
+Route::view('/nosotros', 'inicioGatoNegro')->name("sobrenosotros");
 
-//Ruta para productos
-Route::get('/productos',
-    function () {
-        return view('Producto/Productos');
-    }
-)->name("productos");
+//Ruta para vista servicios
+Route::view('/servicios', 'Servicio/Servicios')->name("servicios");
+>>>>>>> f143b822c0ecc14fb450857d967f150d1a0935c8
+
+//Ruta para vista productos
+Route::view('/productos', 'Producto/Productos')->name("productos");
 
 //Ruta para contactanos
-Route::get('/contactanos',
-    function () {
-        return view('Contactanos');
-    }
-)->name("contactanos");
-
+Route::view('/contactanos', 'Contactanos')->middleware('auth')->name("contactanos");
 
 //Ruta para olvidar contraseña
-Route::get('/olvidarcontraseña',
-    function () {
-        return view('Usuario/olvidarC');
-    }
-)->name("olvidarcontraseña");
-
-//Ruta para registrar usuario
-Route::get('/registrarusuario',
-    function () {
-        return view('Usuario/registrarU');
-    }
-)->name("registrarusuario");
+Route::view('/olvidarcontraseña', 'Usuario/olvidarC')->name("olvidarcontraseña");
 
 //Rutas para Usuario
-Route::get('/login',
-    function () {
-        return view('Usuario/login');
-    }
-)->name("login");
+Route::view('/restablecerContraseña', 'Usuario/reestablecer')->name("restablecerContraseña");
 
-//Rutas para Usuario
-Route::get('/restablecerContraseña',
-    function () {
-        return view('Usuario/reestablecer');
-    }
-)->name("restablecerContraseña");
+//Rutas para Usuarios
+Route::view('/inicioSesion', 'Usuario/iniciarSesion')->name("inicioSesion");
+Route::view('/registrarUsuario', 'Usuario/registrarUsuario')->name("formularioRegistrarUsuario");
+Route::post('/registrar-Usuario', [controladorLogin::class, 'register'])->name("registrarUsuario");
+Route::post('/inicio-Sesion', [controladorLogin::class, 'login'])->name("inicio-Sesion");
+Route::get('/cerrarSesion', [controladorLogin::class, 'logout'])->name("cerrarSesion");
+
 
 //Rutas para los servicios administradores
-Route::get('/agregarServicio', [controladorServicio::class, 'index'])->name("agregarServicio");
+Route::get('/agregarServicio', [controladorServicio::class, 'index'])->middleware('auth')->name("agregarServicio");
 Route::post('/agregarServicio', [controladorServicio::class, 'store']);
 Route::delete('/eliminarServicio{idServ}', [controladorServicio::class, 'destroy'])->name("eliminarServicio");
 Route::get('/listaServicios', [controladorServicio::class, 'index'])->name("listaServicios");
