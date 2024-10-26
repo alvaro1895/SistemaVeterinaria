@@ -17,7 +17,7 @@ use App\Http\Controllers\controladorBlock;
 | contains the "web" middleware group. Now create something great!
 |
 */
-<<<<<<< HEAD
+
 //Ruta para inicio
 Route::get('/',
     function () {
@@ -31,7 +31,6 @@ Route::get('/nosotros',
         return view('nosotros');
     }
 )->name("sobrenosotros");
-=======
 
 //Ruta para vista inicio
 Route::view('/', 'inicioGatoNegro')->name("inicio");
@@ -41,7 +40,7 @@ Route::view('/nosotros', 'inicioGatoNegro')->name("sobrenosotros");
 
 //Ruta para vista servicios
 Route::view('/servicios', 'Servicio/Servicios')->name("servicios");
->>>>>>> f143b822c0ecc14fb450857d967f150d1a0935c8
+
 
 //Ruta para vista productos
 Route::view('/productos', 'Producto/Productos')->name("productos");
