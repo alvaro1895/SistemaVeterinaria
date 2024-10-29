@@ -44,6 +44,9 @@ class controladorDireccion extends Controller
         $direccion->manzana = $request->input('manzana');
         $direccion->lote = $request->input('lote');
         $direccion->referencia = $request->input('referencia');
+
+        $idReserva = $request->input('idReserva');
+        $idUsers = $request->input('idUsuario');
         
         $direccion->save();
 
@@ -51,7 +54,11 @@ class controladorDireccion extends Controller
         $direccionId = $direccion->idDireccion;
 
         // Aquí puedes redirigir a la creación del pago pasando el ID de direccion
-        return redirect()->route('pasarelaPago', ['direccion_id' => $direccionId]);
+        return redirect()->route('pasarelaPago', [
+                                                    'direccion_id' => $direccionId,
+                                                    'idReserva' => $idReserva,
+                                                    'idUsuario'=>$idUsers
+                                                ]);
 
     }
 
@@ -63,7 +70,7 @@ class controladorDireccion extends Controller
      */
     public function show($id)
     {
-       // return view('Pagos/pasarelaPago', compact('direccion_id'));
+        //
     }
 
     /**
@@ -72,9 +79,9 @@ class controladorDireccion extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idReserva, $idUsuario)
     {
-        //
+        return view('Pagos/direccionPago', compact('idReserva', 'idUsuario'));
     }
 
     /**

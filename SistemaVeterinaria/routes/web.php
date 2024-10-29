@@ -54,11 +54,11 @@ Route::view('/olvidarcontraseña', 'Usuario/olvidarC')->name("olvidarcontraseña
 Route::view('/restablecerContraseña', 'Usuario/reestablecer')->name("restablecerContraseña");
 
 //Rutas formulario de direccion para el pago
-Route::view('/direccion', 'Pagos/direccionPago')->name('direccion');
+Route::get('/direccion/{idReserva}/{idUsuario}', [controladorDireccion::class, 'edit'])->name('direccion');
 Route::post('/registrarDireccion',[controladorDireccion::class, 'store'])->name("registrarDireccion");
 
 //Rutas para la pasarela de pago
-Route::get('/pasarelaPago/{direccion_id}', [controladorPago::class, 'edit'])->name('pasarelaPago');
+Route::get('/pasarelaPago/{direccion_id}/{idReserva}/{idUsuario}', [controladorPago::class, 'edit'])->name('pasarelaPago');
 Route::post('/registrarPago',[controladorPago::class, 'store'])->name("registrarPago");
 
 //Rutas de carrito

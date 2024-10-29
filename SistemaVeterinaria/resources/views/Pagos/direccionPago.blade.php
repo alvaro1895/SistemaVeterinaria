@@ -18,6 +18,10 @@
             <h3>FORMULARIO DE DIRECCIÓN</h3>
             <form action={{route("registrarDireccion")}} method="POST">
                 @csrf
+
+                <input type="hidden" name="idReserva" value="{{ $idReserva }}">
+                <input type="hidden" name="idUsuario" value="{{ $idUsuario }}">
+                
                 <div class="form-group">
                     <label for="direccion">Dirección</label>
                     <input type="text" id="direccion" name="direccion" placeholder="Dirección" required>

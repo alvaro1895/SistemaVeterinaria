@@ -19,7 +19,9 @@
             <form action={{route("registrarPago")}} method="POST">
                 @csrf
 
-                <input type="hidden" name="idDireccion" value="{{ $id }}">
+                <input type="hidden" name="idDireccion" value="{{ $direccion_id }}">
+                <input type="hidden" name="idReserva" value="{{ $idReserva }}">
+                <input type="hidden" name="idUsuario" value="{{ $idUsuario }}">
 
                 <div class="form-group">
                     <label for="direccion">Numero de Tarjeta</label>

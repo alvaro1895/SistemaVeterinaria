@@ -40,6 +40,14 @@ class controladorReserva extends Controller
         // Guardar la reserva en la base de datos
         $reserva->save(); // Guarda la nueva reserva en la base de datos.
         // Redireccionar o devolver una respuesta exitosa
-        return redirect()->route('pago');
+
+        $reservaId = $reserva->idReserva;
+
+        $idUser = Auth::user()->idUsers;
+
+        return redirect()->route('direccion',[
+                                                'idReserva' => $reservaId,
+                                                'idUsuario'=>$idUser
+                                            ]);
     }
 }

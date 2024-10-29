@@ -43,6 +43,8 @@ class controladorPago extends Controller
         $pago->mesVencimiento = $request->input('mes');
         $pago->cvv = $request->input('cvv');
         $pago->idDireccion = $request->input('idDireccion');
+        $pago->idReserva = $request->input('idReserva');
+        $pago->idUsers = $request->input('idUsuario');
         
         $pago->save();
 
@@ -68,9 +70,9 @@ class controladorPago extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($direccion_id,$idReserva,$idUsuario)
     {
-        return view('Pagos/pasarelaPago', compact('id'));
+        return view('Pagos/pasarelaPago', compact('direccion_id','idReserva','idUsuario'));
     }
 
     /**

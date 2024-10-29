@@ -37,7 +37,7 @@
             <li><a class="active" href="{{ route('sobrenosotros') }}">Sobre Nosotros</a></li>
             <li><a class="active" href="{{ route('servicios') }}">Servicios</a></li>
             <li><a class="active" href="{{ route('productos') }}">Productos</a></li>
-            <li><a class="active" href="{{ route('contactanos') }}">Contactanos</a></li>
+            <li><a class="active" href="{{ route('contactanos') }}">Inicio Sesión</a></li>
             <li><a class="active" href="{{ route('block') }}">Blog</a></li>
 
             <div class="nav-header">

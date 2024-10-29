@@ -13,8 +13,9 @@ class controladorPersona extends Controller
     //steven
     public function index()
     {
+        $idUser = Auth::user()->idUsers;
         // Obtener los datos de la persona desde la base de datos.
-        $persona = User::find(2); // Cambia el ID según sea necesario. deberia salir del logeo
+        $persona = User::find($idUser); // Cambia el ID según sea necesario. deberia salir del logeo
 
         // Retornar la vista con los datos de la persona.
         return view('usuario.persona', compact('persona'));
