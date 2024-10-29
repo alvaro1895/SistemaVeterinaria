@@ -50,6 +50,7 @@
             <a href="#itemCarrousel-3">•</a>
         </div>
     </div>
+
     <table class="servicios-section" >
         <td class="servicios-image" align="center" >
             <a  class="active2" href="{{ route('reservaServicio') }}">Reserva Aquí</a>

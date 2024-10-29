@@ -16,13 +16,13 @@ class controladorLogin extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function index()
-     {
-         //$listaServicios = modeloServicio::all();
-         //utilizando compact para compactar los datos en una array para mandar a la vista
-         //return view('Servicio/agregarServicio', compact('listaServicios'));
- 
-     }
+    //  public function index()
+    //  {
+    //      //$listaServicios = modeloServicio::all();
+    //      //utilizando compact para compactar los datos en una array para mandar a la vista
+    //      //return view('Servicio/agregarServicio', compact('listaServicios'));
+
+    //  }
     /**
      * Show the form for creating a new resource.
      *
@@ -43,15 +43,17 @@ class controladorLogin extends Controller
     {
         //registrar al usuario
         $user = new User();
-        $user->name = $request->input("nombre").' '.$request->input("apellido");
+        $user->name = $request->input("nombre") ;
+        $user->lastname = $request->input("apellido");
         $user->email = $request->input("email");
         $user->password = Hash::make($request->input("password"));
+        $user->phone = $request->input("phone");
 
         $user->save();
 
         Auth::login($user);
 
-        return redirect()->route('agregarServicio');
+        return redirect()->route('inicio');
 
     }
 
@@ -63,24 +65,25 @@ class controladorLogin extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('inicioSesion');
+        return redirect()->route('sobrenosotros');
     }
 
     public function login(Request $request)
     {
         //inicio de sesion
         $credenciales = [
-            'email' => $request->input('email'), 
+            'email' => $request->input('email'),
             'password' => $request->input('password')
         ];
-        
+
         $recordarSesion = ($request->has('remember') ? true : false);
+        //check para guardar la sesion
 
         if (Auth::attempt($credenciales,$recordarSesion)) {
             $request->session()->regenerate();
 
-            return redirect()->intended(route('agregarServicio'));
-            
+            return redirect()->intended(route('inicio'));
+
         } else {
             return redirect()->route('inicioSesion');
         }
@@ -117,10 +120,10 @@ class controladorLogin extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
+    // public function update(Request $request, User $user)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -132,4 +135,34 @@ class controladorLogin extends Controller
     {
         //
     }
+
+    // //steven
+    // public function index()
+    // {
+    //     // Obtener los datos de la persona desde la base de datos.
+    //     $persona = User::find(2); // Cambia el ID según sea necesario. deberia salir del logeo
+
+    //     // Retornar la vista con los datos de la persona.
+    //     return view('usuario.persona', compact('persona'));
+    // }
+
+
+    // public function update(Request $request, $id)
+    // {
+    //     $request->validate([
+    //         'nombre' => 'required|string|max:255',
+    //         'apellido' => 'required|string|max:255',
+    //         'telefono' => 'required|string|max:15',
+    //         'correo' => 'required|email|max:255',
+    //     ]);
+
+    //     $persona = User::findOrFail($id);
+    //     $persona->name = $request->nombre;
+    //     $persona->lastname = $request->apellido;
+    //     $persona->phone = $request->telefono;
+    //     $persona->email = $request->correo;
+    //     $persona->save();
+
+    //     return redirect()->back()->with('success', 'Datos actualizados correctamente.');
+    // }
 }

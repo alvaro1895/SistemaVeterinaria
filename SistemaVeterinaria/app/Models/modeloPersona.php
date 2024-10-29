@@ -3,7 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Persona extends Model
+class modeloPersona extends Model
 {
     protected $table = 'persona'; // Nombre de la tabla en la base de datos
     protected $primaryKey = 'idPersona'; // Llave primaria personalizada
@@ -19,7 +19,7 @@ class Persona extends Model
     public function edit($id)
     {
         // Buscar la persona por su ID
-        $persona = Persona::findOrFail($id);
+        $persona = modeloPersona::findOrFail($id);
 
         // Retornar la vista de edición con la información de la persona
         return view('persona-edit', compact('persona'));
@@ -28,6 +28,6 @@ class Persona extends Model
     // Relación con pagos
     public function pagos()
     {
-        return $this->hasMany(Pago::class, 'idPersona', 'idPersona');
+        return $this->hasMany(modeloPago::class, 'idPersona', 'idPersona');
     }
 }

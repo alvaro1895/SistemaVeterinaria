@@ -20,6 +20,6 @@ class modeloServicio extends Model
     public $timestamps = false; // Desactiva los timestamps
     public function especialista()
     {
-    return $this->belongsTo(modeloEspecialista::class, 'idEspecialista', 'idEspecialista');
+    return $this->belongsTo(modeloEspecialista::class, 'idEspecialista');
     }
 }

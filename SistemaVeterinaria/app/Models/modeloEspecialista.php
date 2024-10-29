@@ -20,5 +20,7 @@ class modeloEspecialista extends Model // Define la clase
     ];
 
     public $timestamps = false; // Desactiva los timestamps
+
+
 }
 

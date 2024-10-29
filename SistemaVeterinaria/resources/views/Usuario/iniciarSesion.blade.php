@@ -47,9 +47,7 @@
             <a href="{{ route('formularioRegistrarUsuario') }}" class="register-user">Registrar Usuario</a><br>
             <!-- Botón para enviar el formulario (iniciar sesión) -->
             <button type="submit" class="login-button">Ingresar</button><br>
-        </form>
-            <button type="submit" class="login-button" href="{{route('inicio')}}">Ingresar</button><br>
-        </form>
+
     </div>
 <br>
     <!--Codigo JS abajo (ponerlos todos ahi. sino fallan)-->

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class modeloReserva extends Model
+class Reservas extends Model
 {
     protected $table = 'reserva'; // Asegúrate de que coincida con el nombre de tu tabla
     protected $primaryKey = 'idReserva'; // Llave primaria personalizada
@@ -21,7 +21,5 @@ class modeloReserva extends Model
     {
         return $this->belongsTo(modeloServicio::class, 'idServicio');
     }
-
-
 
 }

@@ -7,8 +7,15 @@ use App\Http\Controllers\controladorServicio;
 use App\Http\Controllers\controladorProducto;
 use App\Http\Controllers\controladorBlock;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\GestionReservaC;
-use App\Http\Controllers\controladorReserva;
+use App\Http\Controllers\ControladorReserva;
+
+use App\Http\Controllers\ControladorReservaS;
+use App\Http\Controllers\controladorGestionUsuario;
+use App\Http\Controllers\controladorPersona;
+use App\Http\Controllers\ControladorCompras;
+use App\Http\Controllers\ControladorGestionReserva;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,25 +28,11 @@ use App\Http\Controllers\controladorReserva;
 |
 */
 
-//Ruta para inicio
-Route::get('/',
-    function () {
-        return view('inicioGatoNegro');
-    }
-)->name("inicio");
-
-//Ruta para nosotros
-Route::get('/nosotros',
-    function () {
-        return view('nosotros');
-    }
-)->name("sobrenosotros");
-
 //Ruta para vista inicio
 Route::view('/', 'inicioGatoNegro')->name("inicio");
 
 //Ruta para vista nosotros
-Route::view('/nosotros', 'inicioGatoNegro')->name("sobrenosotros");
+Route::view('/nosotros', 'nosotros')->name("sobrenosotros");
 
 //Ruta para vista servicios
 Route::view('/servicios', 'Servicio/Servicios')->name("servicios");
@@ -57,12 +50,13 @@ Route::view('/olvidarcontraseña', 'Usuario/olvidarC')->name("olvidarcontraseña
 //Rutas para Usuario
 Route::view('/restablecerContraseña', 'Usuario/reestablecer')->name("restablecerContraseña");
 
-//Rutas para Usuarios
+//rutas para usuarios alvaro
 Route::view('/inicioSesion', 'Usuario/iniciarSesion')->name("inicioSesion");
-Route::view('/registrarUsuario', 'Usuario/registrarUsuario')->name("formularioRegistrarUsuario");
+Route::view('/registraUsuario', 'Usuario/registrarUsuario')->name("formularioRegistrarUsuario");
 Route::post('/registrar-Usuario', [controladorLogin::class, 'register'])->name("registrarUsuario");
 Route::post('/inicio-Sesion', [controladorLogin::class, 'login'])->name("inicio-Sesion");
 Route::get('/cerrarSesion', [controladorLogin::class, 'logout'])->name("cerrarSesion");
+
 
 
 //ruta formulario servicio
@@ -113,20 +107,59 @@ Route::get('/articulo8', [controladorBlock::class, 'articulo8'])->name("articulo
 Route::get('/articulo9', [controladorBlock::class, 'articulo9'])->name("articulo9");
 
 
-// Ruta para mostrar todas las reservas
-Route::get('/reserva', [GestionReservaC::class, 'index'])->name('reserva.index');
+//----------------------------------------------------------
 
-// Ruta para mostrar el formulario de edición de una reserva específica
-Route::get('/reserva/{id}/edit', [GestionReservaC::class, 'edit'])->name('reserva.edit');
+//Dayra
+//Ruta para reservar servicio formulario de reserva
+Route::get('/agregarReserva',[controladorReserva::class, 'index'])->name("traeListaServicio");
 
-// Ruta para actualizar una reserva específica mediante el método POST
-Route::post('/reserva/{id}/edit', [GestionReservaC::class, 'update'])->name('reserva.update');
+// Ruta para almacenar una nueva reserva mediante el método POST
+Route::post('/reserva', [controladorReserva::class, 'store'])->name('reserva.store');
+Route::get('/reserva', [controladorReserva::class, 'index'])->name('reserva.index');
 
-// Ruta para eliminar una reserva específica
-Route::delete('/reserva/{id}', [GestionReservaC::class, 'destroy'])->name('reserva.destroy');
+//Route::get('/pago', [ControladorPago::class, 'index'])->name('pago');
+Route::get('/pago', function () {
+    return view('pago');
+})->name('pago');
 
-// Ruta para mostrar todas las reservas (otra forma de acceder a la misma funcionalidad)
-Route::get('/gestionReserva', [GestionReservaC::class, 'index'])->name('gestionReserva.index');
+
+//Dayra:  Ruta para gestionar las reservas de serivicio realizadas
+Route::prefix('pagos')->group(function () {
+    // Ruta para mostrar el listado de pagos (vista principal)
+    Route::get('/', [ControladorGestionReserva::class, 'index'])->name('pagos.index');
+
+    // Ruta para actualizar un pago
+    Route::put('/{id}/update', [ControladorGestionReserva::class, 'update'])->name('gestionReserva.update');
+
+    // Ruta para eliminar un pago
+    Route::delete('/{id}', [ControladorGestionReserva::class, 'destroy'])->name('gestionReserva.destroy');
+
+});
 
 
+//------------------------------------------------------------------------------------------------
+//Steven
+//Ruta de controladorReserva
+
+
+Route::get('/reservas', [ControladorReserva::class, 'index'])->name('reservas.index');
+
+//Ruta de controladorCompra
+Route::get('/compras', [ControladorCompras::class, 'index'])->name('compras');
+
+// //Ruta de contrladorPersonas
+Route::get('/persona', [controladorPersona::class, 'index'])->name('persona');
+Route::post('/persona/{id}', [controladorPersona::class, 'update'])->name('persona.update');
+
+// //Ruta de controladorReserva
+Route::get('/reservas', [ControladorReservas::class, 'index'])->name('reservas.index');
+
+// Ruta para gestionar usuarios
+
+
+Route::get('/usuarios', [controladorGestionUsuario::class, 'index'])->name('usuarios.index'); // Muestra la página de gestión de usuarios
+Route::get('/usuarios/{id}/edit', [controladorGestionUsuario::class, 'edit'])->name('usuarios.edit'); // Edita un usuario
+Route::get('/usuarios/{id}/toggle-status', [controladorGestionUsuario::class, 'toggleStatus'])->name('usuarios.toggleStatus'); // Cambia el estado de un usuario
+
+Route::put('/usuarios/{id}/edit', [controladorGestionUsuario::class, 'update'])->name('usuarios.update');
 
