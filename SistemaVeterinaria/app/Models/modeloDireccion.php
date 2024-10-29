@@ -1,25 +1,28 @@
 <?php
+
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class modeloDireccion extends Model
 {
-    protected $table = 'direccion'; // Nombre de la tabla en la base de datos
-    protected $primaryKey = 'idDireccion'; // Llave primaria personalizada
-    public $timestamps = false; // Si no estás usando las columnas `created_at` y `updated_at`
+    use HasFactory;
+
+    protected $table ='direccion';
+
+    protected $primaryKey = 'idDireccion';
 
     protected $fillable = [
         'direccion',
+        'deoartamento',
+        'provincia',
         'distrito',
         'manzana',
         'lote',
-        'referencia'
+        'referencia',
     ];
 
-    // Relación con pagos
-    public function pagos()
-    {
-        return $this->hasMany(modeloPago::class, 'idDireccion', 'idDireccion');
-    }
+    public $timestamps = false; // Desactiva los timestamps
+
 }

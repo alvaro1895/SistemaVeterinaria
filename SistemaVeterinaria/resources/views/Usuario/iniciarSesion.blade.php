@@ -27,19 +27,16 @@
             <img src="\img\logo2.png" alt="Gato Negro" class="login-image">
         </div>
         <!-- Formulario de inicio de sesión -->
-
         <form class="login-form" action="{{route("inicio-Sesion")}}" method="post" >
             <h2 style="color:white">GATO NEGRO</h2> <BR>
             @csrf
-        <form class="login-form" action="/" method="get" >
-            <h2 style="color:white">GATO NEGRO</h2> <BR>
             <!-- Campo de entrada para el email (obligatorio) -->
             <input type="email" id="email" name="email" placeholder="Email" class="login-input" required><br>
             <!-- Campo de entrada para la contraseña (obligatorio) -->
             <input type="password" id="password" name="password" placeholder="Contraseña" class="login-input" required><br>
             <!-- checkbox para recordar sesion -->
             <label style="color:white">
-                <input type="checkbox" name="remember" style="margin-right: 10px"> Mantener Sesión
+                <input type="checkbox" name="remember" style="margin-right: 10px"> Recordar Sesión
             </label><br>
             <!-- Enlace para recuperar la contraseña -->
             <a href="{{ route('olvidarcontraseña') }}" class="register-user">Olvide mi contraseña</a><br>
@@ -47,6 +44,7 @@
             <a href="{{ route('formularioRegistrarUsuario') }}" class="register-user">Registrar Usuario</a><br>
             <!-- Botón para enviar el formulario (iniciar sesión) -->
             <button type="submit" class="login-button">Ingresar</button><br>
+        </form>
 
     </div>
 <br>

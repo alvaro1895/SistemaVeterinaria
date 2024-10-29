@@ -16,6 +16,9 @@ use App\Http\Controllers\ControladorCompras;
 use App\Http\Controllers\ControladorGestionReserva;
 
 
+use App\Http\Controllers\controladorDireccion;
+use App\Http\Controllers\controladorPago;
+use App\Http\Controllers\controladorCarrito;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +52,23 @@ Route::view('/olvidarcontraseña', 'Usuario/olvidarC')->name("olvidarcontraseña
 
 //Rutas para Usuario
 Route::view('/restablecerContraseña', 'Usuario/reestablecer')->name("restablecerContraseña");
+
+//Rutas formulario de direccion para el pago
+Route::view('/direccion', 'Pagos/direccionPago')->name('direccion');
+Route::post('/registrarDireccion',[controladorDireccion::class, 'store'])->name("registrarDireccion");
+
+//Rutas para la pasarela de pago
+Route::get('/pasarelaPago/{direccion_id}', [controladorPago::class, 'edit'])->name('pasarelaPago');
+Route::post('/registrarPago',[controladorPago::class, 'store'])->name("registrarPago");
+
+//Rutas de carrito
+Route::get('/inicioTienda', [controladorCarrito::class, 'shop'])->name('shop');
+Route::get('/cart', [controladorCarrito::class, 'cart'])->name('cart.index');
+Route::post('/add', [controladorCarrito::class, 'add'])->name('cart.store');
+Route::post('/update', [controladorCarrito::class, 'update'])->name('cart.update');
+Route::post('/remove', [controladorCarrito::class, 'remove'])->name('cart.remove');
+Route::post('/clear', [controladorCarrito::class, 'clear'])->name('cart.clear');
+
 
 //rutas para usuarios alvaro
 Route::view('/inicioSesion', 'Usuario/iniciarSesion')->name("inicioSesion");

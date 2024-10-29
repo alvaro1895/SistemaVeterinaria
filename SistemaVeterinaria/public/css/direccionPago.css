@@ -1,0 +1,97 @@
+/* Contenedor principal del formulario */
+body {
+    background-color: #d9d2c3;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d9d2c3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Título principal */
+.form-container h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Card del formulario */
+.form-card {
+    background-color: #f8f6f3;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del formulario */
+.form-card h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Filas */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Grupo de cada campo */
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etiquetas */
+.form-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+.form-group input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #333;
+}
+
+/* Botón de envío */
+.submit-button {
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.submit-button:hover {
+    background-color: #c9302c;
+}
