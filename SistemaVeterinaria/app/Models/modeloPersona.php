@@ -3,7 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Persona extends Model
+class modeloPersona extends Model
 {
     protected $table = 'persona'; // Nombre de la tabla en la base de datos
     protected $primaryKey = 'idPersona'; // Llave primaria personalizada

@@ -11,19 +11,22 @@ class modeloProducto extends Model
 
     protected $table ='producto';
 
-    protected $primaryKey = 'idProd';
+    protected $primaryKey = 'idProducto';
 
     protected $fillable = [
-        'nombre',
-        'descripcion',
-        'precio',
-        'imagen',
-        'cantidad',
-        'fecha de vencimiento',
-        'idmarca',
+        'nombreProducto',
+        'descripcionProducto',
+        'precioProducto',
+        'imagenProducto',
+        'cantidadProducto',
     ];
 
     public $timestamps = false; // Desactiva los timestamps
+
+    /*public function direccion()
+    {
+        return $this->belongsTo(modeloDireccion::class, 'idDireccion');
+    }*/
 }
 
     
