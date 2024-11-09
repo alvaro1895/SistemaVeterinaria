@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GatoNegro</title>
-    <link rel="icon" href="img/logo2.png" type="image/x-icon">
-    <link rel="stylesheet" href="\css\responsive.css">
-    <link rel="stylesheet" href="\css\style.css">
-    <link rel="stylesheet" href="\css\carrusel.css">
-    <link rel="stylesheet" href="\css\footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="\css\tabla.css">
-</head>
-<body>
-    
-<!-- resources/views/cabecera.blade.php -->
-@include('cabecera')
+
+@extends('layouts.principal')
+
+@section('title','INICIO')
+
+@section('contenido')
 
     <div class="carrousel">
         <div class="conteCarrousel">
@@ -165,11 +153,12 @@
 
     </table>
 
+    
+@endsection
+
+@push('javascript')
     <!--Codigo JS abajo (ponerlos todos ahi. sino fallan)-->
     <script src="\js\carrusel.js"></script>
     <script src="\js\boton.js"></script>
+@endpush
     
-    @include('piepagina')  
-    
-</body>
-</html>
