@@ -36,17 +36,17 @@
         <div class="profile-form">
             <h3>Mis Reservas</h3>
             <div class="reservations">
-                @if($reservas->isEmpty())
+                @if($pago->isEmpty())
                     <p>No hay reservas disponibles.</p>
                 @else
-                    @foreach ($reservas as $reserva)
+                    @foreach ($pago as $pagos)
                         <div class="reservation-item">
                             <p><strong>.</strong>
-                            <p><strong>Fecha de atención:</strong> {{ \Carbon\Carbon::parse($reserva->fechaReserva)->format('d/m/Y') }}</p>
-                            <p><strong>Hora de atención:</strong> {{ \Carbon\Carbon::parse($reserva->horaReserva)->format('g:i a') }}</p>
-                            <p><strong>Doctor:</strong> Dr. {{ $reserva->servicio->especialista->nombreEspecialista }} {{ $reserva->servicio->especialista->apellidoEspecialista }}</p>
-                            <p><strong>Servicio:</strong> {{ $reserva->servicio->nombreServicio }}</p>
-                            <p><strong>Costo:</strong> S/ {{ number_format($reserva->servicio->precioServicio, 2) }}
+                            <p><strong>Fecha de atención:</strong> {{ \Carbon\Carbon::parse($pagos->reserva->fechaReserva)->format('d/m/Y') }}</p>
+                            <p><strong>Hora de atención:</strong> {{ \Carbon\Carbon::parse($pagos->reserva->horaReserva)->format('g:i a') }}</p>
+                            <p><strong>Doctor:</strong> Dr. {{ $pagos->reserva->servicio->especialista->nombreEspecialista }} {{ $pagos->reserva->servicio->especialista->apellidoEspecialista }}</p>
+                            <p><strong>Servicio:</strong> {{ $pagos->reserva->servicio->nombreServicio }}</p>
+                            <p><strong>Costo:</strong> S/ {{ number_format($pagos->reserva->servicio->precioServicio, 2) }}
                         </div>
                     @endforeach
                 @endif

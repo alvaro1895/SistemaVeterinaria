@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\modeloReserva;
+use App\Models\modeloPago;
 use App\Models\Reservas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ControladorReservas extends Controller
 {
     public function index()
     {
-        // Obtener todas las reservas
-        $reservas = modeloReserva::all();
+        $idUser = Auth::user()->idUsers;
 
-        return view('usuario.reservas', compact('reservas')); // Cargar la vista correcta
+        $pago = modeloPago::with(['user', 'reserva'])->where('idUsers', $idUser)->get();
+
+
+        return view('usuario.reservaS', compact('pago')); // Cargar la vista correcta
     }
 }
