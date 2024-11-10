@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="\css\footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="\css\tabla.css">
-    <!-- Stack para agregar estilos específicos en las secciones -->
+
+    <!-- Stack para agregar estilos específicos de secciones -->
     @stack('css')
 </head>
 <body>
@@ -27,7 +28,7 @@
     <!--incluir pie de pagina del usuario-->
     @include('partials._pie_de_pagina_usuario')
 
-    <!-- Stack para agregar javascript específicos en las secciones -->
+    <!-- Stack para agregar javascript específicos de secciones -->
     @stack('javascript')
 
 </body>

@@ -47,16 +47,17 @@
             opacity: 0.5; /* Hace la imagen un 50% transparente al pasar el cursor */
         }
         /* Estilo de los enlaces en los títulos */
-        a {
+        .a {
             text-decoration: none; /* Eliminar subrayado */
             color: #060303; /* Color del enlace */
             font-weight: bold; /* Negrita en el texto */
         }
-        a:hover {
+        
+        .a:hover {
             text-decoration: underline; /* Subrayar el enlace al pasar el mouse */
             color: #89969d; /* Cambiar color al pasar el mouse */
         }
-
+        
                 /* Estilo del botón "Cargar más" */
                 #loadMore {
                     display: block;

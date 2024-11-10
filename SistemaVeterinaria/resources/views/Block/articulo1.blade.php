@@ -1,48 +1,19 @@
-!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virus de Inmunodeficiencia Felina</title>
-    <link rel="icon" href="img/logo2.png" type="image/x-icon">
-    <link rel="stylesheet" href="\css\responsive.css">
-    <link rel="stylesheet" href="\css\style.css">
-    <link rel="stylesheet" href="\css\carrusel.css">
-    <link rel="stylesheet" href="\css\footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="\css\tabla.css">
-    <link rel="stylesheet" href="\css\blog.css">
-    <link rel="stylesheet" href="\css\articulos.css">
-    <script src="/js/cargarmas.js" ></script>
-</head>
-<body>
-    
-    @include('cabecera')
-    
-    <div class="carrousel">
-        <div class="conteCarrousel">
-            <div class="itemCarrousel" id="itemCarrousel-1">
-                <div class="itemCarrouselTarjeta">
-                    <img src="..\img\blog.jpg" alt="">
-                    <div class="textOverlay1">Tu mascota, nuestra prioridad</div>
-                </div>
-            </div>
-        </div>
-        <div class="itemCarrouselArrows">
-            <button class="arrow-left">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="arrow-right">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-        <div class="conteCarrouselController">
-            <a href="#itemCarrousel-1">•</a>
-            <a href="#itemCarrousel-2">•</a>
-            <a href="#itemCarrousel-3">•</a>
-        </div>
-    </div>
-    
+<!-- insertar el layout priincipal que tiene cabecera y pie de pagina -->
+@extends('layouts.principal')
+
+<!-- definiendo el titulo de la pagina -->
+@section('titulo','ARTICULO 1')
+
+<!-- css adicional -->
+@push('css')
+<link rel="stylesheet" href="\css\blog.css">
+<link rel="stylesheet" href="\css\articulos.css">
+@endpush
+
+<!-- seccion donde se pone el contenido de la pagina -->
+@section('contenido')
+    <!-- se incluye el carrusel de imagenes en la pagina de inicio -->
+    @include('partials.carrusel_imagenes._block')   
 
     <div class="container">
         <!-- Título -->
@@ -91,11 +62,10 @@
             </p>
         </div>
     </div>
+@endsection
 
-    <!--Codigo JS abajo (ponerlos todos ahi. sino fallan)-->
-    <script src="\js\carrusel.js"></script>
-    <script src="\js\boton.js"></script>
-    @include('piepagina')  
-    
-</body>
-</html>
+<!-- javascript adicional -->
+@push('javascript')
+    <script src="/js/cargarmas.js" ></script>
+@endpush
+

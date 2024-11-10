@@ -1,60 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GatoNegro</title>
-    <link rel="icon" href="img/logo2.png" type="image/x-icon">
-    <link rel="stylesheet" href="\css\responsive.css">
-    <link rel="stylesheet" href="\css\style.css">
-    <link rel="stylesheet" href="\css\carrusel.css">
-    <link rel="stylesheet" href="\css\footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="\css\tabla.css">
-</head>
-<body>
-    @include('cabecera')
-    
-    <div class="carrousel">
-        <div class="conteCarrousel">
-            <div class="itemCarrousel" id="itemCarrousel-1">
-                <div class="itemCarrouselTarjeta">
-                    <img src="img\cat.jpg" alt="">
-                    <div class="textOverlay1">Tu mascota, nuestra prioridad</div>
-                </div>
-            </div>
-            <div class="itemCarrousel" id="itemCarrousel-2">
-                <div class="itemCarrouselTarjeta">
-                    <img src="img\dog.jpg" alt="">
-                    <div class="textOverlay21">Expertos en salud animal </div>
-                    <div class="textOverlay22">Diagnóstico certero y tratamientos</div>
-                    <div class="textOverlay23">personalizados para tu mejor amigo</div>
-                </div>
-            </div>
-            <div class="itemCarrousel" id="itemCarrousel-3">
-                <div class="itemCarrouselTarjeta">
-                    <img src="\img\cat1.jpg" alt="">
-                    <div class="textOverlay31">Un hogar feliz comienza</div>
-                    <div class="textOverlay32">con una mascota sana</div>
-                    <div class="textOverlay33">¡Visítanos y comprúebalo!</div>
-                </div>
-            </div>
-        </div>
-        <div class="itemCarrouselArrows">
-            <button class="arrow-left">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="arrow-right">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-        <div class="conteCarrouselController">
-            <a href="#itemCarrousel-1">•</a>
-            <a href="#itemCarrousel-2">•</a>
-            <a href="#itemCarrousel-3">•</a>
-        </div>
-    </div>
-    <br>
+<!-- insertar el layout priincipal que tiene cabecera y pie de pagina -->
+@extends('layouts.principal')
+
+<!-- definiendo el titulo de la pagina -->
+@section('titulo','SOBRE NOSOTROSO')
+
+<!-- seccion donde se pone el contenido de la pagina -->
+@section('contenido')
+    <!-- se incluye el carrusel de imagenes en la pagina de inicio -->
+    @include('partials.carrusel_imagenes._nosotros')
 
     <h1 class="venta">NOSOTROS</h1>
     <br>
@@ -232,13 +185,14 @@
                 <h3 class="name">Administrador</h3>
                 <a class="active2" href="https://github.com/NevVinino/RepoVet">→</a> </li>
             </td>    
-        </tr>
-       
+        </tr>     
     </table>
+@endsection
+
+<!-- apartado para poner el javascritp personalisado de la pagina -->
+@push('javascript')
     <!--Codigo JS abajo (ponerlos todos ahi. sino fallan)-->
     <script src="\js\carrusel.js"></script>
     <script src="\js\boton.js"></script>
-@include('piepagina')
-    <!-- para comentar : ctrl+k , ctrl+c -->
-</body>
-</html>
+@endpush
+    
