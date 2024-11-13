@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Dirección</title>
+@extends('layouts.principal')
+
+@section('titulo','FORMULARIO-PAGO')
+
+@push('css')
     <link rel="stylesheet" href="{{ asset('css/pago.css') }}">
-</head>
-<body>
+@endpush
 
-    @include('cabecera')
-
+<!-- seccion donde se pone el contenido de la pagina -->
+@section('contenido') 
     <br><br><br><br><br><br>
 
     <div class="form-container">
@@ -58,6 +56,4 @@
             </form>
         </div>
     </div>
-
-</body>
-</html>
+@endsection

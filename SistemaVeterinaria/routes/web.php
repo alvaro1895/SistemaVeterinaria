@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\controladorLogin;
 use App\Http\Controllers\controladorServicio;
 use App\Http\Controllers\controladorProducto;
 use App\Http\Controllers\controladorBlock;
@@ -30,19 +29,15 @@ use App\Http\Controllers\controladorCarrito;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//paginas de vista directa de las paginas web
+require base_path("routes/vista-directa.php");
 
-//Ruta para vista inicio
-Route::view('/', 'inicioGatoNegro')->name("inicio");
+//rutas de la funcionalidad de reserva
+require base_path("routes/reserva.php");
 
-//Ruta para vista nosotros
-Route::view('/nosotros', 'nosotros')->name("sobrenosotros");
+//rutas de la funcionalidad de inicio sesion
+require base_path("routes/inicio-sesion.php");
 
-//Ruta para vista servicios
-Route::view('/servicios', 'Servicio/Servicios')->name("servicios");
-
-
-//Ruta para vista productos
-Route::view('/productos', 'Producto/Productos')->name("productos");
 
 //Ruta para contactanos
 Route::view('/contactanos', 'Contactanos')->middleware('auth')->name("contactanos");
@@ -70,12 +65,7 @@ Route::post('/remove', [controladorCarrito::class, 'remove'])->name('cart.remove
 Route::post('/clear', [controladorCarrito::class, 'clear'])->name('cart.clear');
 
 
-//rutas para usuarios alvaro
-Route::view('/inicioSesion', 'Usuario/iniciarSesion')->name("inicioSesion");
-Route::view('/registraUsuario', 'Usuario/registrarUsuario')->name("formularioRegistrarUsuario");
-Route::post('/registrar-Usuario', [controladorLogin::class, 'register'])->name("registrarUsuario");
-Route::post('/inicio-Sesion', [controladorLogin::class, 'login'])->name("inicio-Sesion");
-Route::get('/cerrarSesion', [controladorLogin::class, 'logout'])->name("cerrarSesion");
+
 
 
 
@@ -96,11 +86,7 @@ Route::get('/pagar',
     }
 )->name("pagar");
 
-// Ruta para mostrar el formulario de creación de una nueva reserva
-Route::get('/reservas/crear', [controladorReserva::class, 'crearReserva'])->name('reservas.crear');
 
-// Ruta para almacenar una nueva reserva mediante el método POST
-Route::post('/reservas', [controladorReserva::class, 'store'])->name('reservas.store');
 
 //Rutas para los servicios administradores
 Route::get('/agregarServicio', [controladorServicio::class, 'index'])->middleware('auth')->name("agregarServicio");
@@ -129,13 +115,9 @@ Route::get('/articulo9', [controladorBlock::class, 'articulo9'])->name("articulo
 
 //----------------------------------------------------------
 
-//Dayra
-//Ruta para reservar servicio formulario de reserva
-Route::get('/agregarReserva',[controladorReserva::class, 'index'])->name("traeListaServicio");
 
-// Ruta para almacenar una nueva reserva mediante el método POST
-Route::post('/reserva', [controladorReserva::class, 'store'])->name('reserva.store');
-Route::get('/reserva', [controladorReserva::class, 'index'])->name('reserva.index');
+
+
 
 //Route::get('/pago', [ControladorPago::class, 'index'])->name('pago');
 Route::get('/pago', function () {
