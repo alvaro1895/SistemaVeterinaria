@@ -49,6 +49,9 @@ require base_path("routes/pagos.php");
 //ruta de la funcionalidad de tipo
 require base_path("routes/tipo.php");
 
+//ruta de panel de admin 
+require base_path("routes/panelAdmin.php");
+
 //Ruta para contactanos
 Route::view('/contactanos', 'Contactanos')->middleware('auth')->name("contactanos");
 
@@ -175,3 +178,8 @@ Route::get('/usuarios/{id}/toggle-status', [controladorGestionUsuario::class, 't
 
 Route::put('/usuarios/{id}/edit', [controladorGestionUsuario::class, 'update'])->name('usuarios.update');
 
+//Ruta para panelAdmin
+
+Route::get('/panel-admin', function () {
+    return view('panelAdmin');
+})->name('panelAdmin');
