@@ -11,3 +11,6 @@ Route::view('/servicios', 'Servicio/Servicios')->name("servicios");
 
 //Ruta para vista productos
 Route::view('/productos', 'Producto/Productos')->name("productos");
+
+//Ruta para vista reporte
+Route::view('/reporte', 'reporteBI')->name("reporte");

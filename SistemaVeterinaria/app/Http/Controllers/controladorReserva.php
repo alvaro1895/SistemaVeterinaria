@@ -22,6 +22,7 @@ class controladorReserva extends Controller
         // Retorna la vista 'reservaServicio' ubicada en la carpeta 'Servicio'. El método compact envía las variables $listaServicios, $listaEspecialista y $usuario a la vista para que puedan ser usadas en el frontend.
     }
 
+
     public function store(Request $request) // Define una función pública llamada "store" que recibe un objeto $request, utilizado para acceder a los datos enviados por el formulario de reserva.
     {
         // Validar los datos

@@ -10,13 +10,7 @@ class modeloCategoria extends Model
     public $timestamps = false; // Si no estás usando las columnas `created_at` y `updated_at`
 
     protected $fillable = [
-        'nombreCateg',
-        'descripcionCateg'
+        'nombreCategoria',
+        'descripcionCategoria'
     ];
-
-    // Relación con tipos
-    public function tipos()
-    {
-        return $this->hasMany(modeloTipo::class, 'idCategoria', 'idCategoria');
-    }
 }

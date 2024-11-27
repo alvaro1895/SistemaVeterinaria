@@ -11,7 +11,7 @@
 
     <table class="servicios-section" >
         <td class="servicios-image" align="center" >
-            <a  class="active2" href="{{ route('reservaServicio') }}">Reserva Aquí</a>
+            <a  class="active2" href="">Reserva Aquí</a>
         </td>
     </table>
     <h1 align="center"> Servicios</h1>

@@ -6,6 +6,8 @@ use App\Models\modeloDireccion; // Importa el modelo Direccion
 use App\Models\modeloPersona; // Importa el modelo Persona
 use App\Models\modeloReserva; // Importa el modelo Reserva
 use App\Models\modeloProducto; // Importa el modelo Producto
+use App\Models\modeloPagoPresencial;
+
 use App\Models\user; // Importa el modelo Producto
 
 class modeloPago extends Model
@@ -54,6 +56,12 @@ class modeloPago extends Model
     {
         return $this->belongsTo(User::class, 'idUsers');
     }
+
+    //dua
+    public function pagoPresencial()
+{
+    return $this->hasOne(modeloPagoPresencial::class, 'idPago');
+}
 
 
 }
