@@ -39,7 +39,7 @@
         <tr>
                 
             <td>
-                <a href="{{ route('gestionProductos') }}">
+                <a href="{{ route('reporte') }}">
                     <img src="{{ asset('img/gestionProductos.png') }}" alt="Gestión de Productos" class="gestion-icon">
                     <p>Gestión de Productos</p>
                 </a>
@@ -67,6 +67,19 @@
                 </a>
             </td>
             
+            <td>
+                <a href="{{ route('GestionTipo.index') }}">
+                    <img src="{{ asset('img/gestionTipo.png') }}" alt="Gestión de Productos" class="gestion-icon">
+                    <p>Gestion Tipo</p>
+                </a>
+            </td>
+
+            <td>
+                <a href="{{ route('reporte') }}">
+                    <img src="{{ asset('img/gestionEspecialista.png') }}" alt="Gestión Especialista" class="gestion-icon">
+                    <p>Gestion Especialista</p>
+                </a>
+            </td>
         </tr>
     </table>
 </div>

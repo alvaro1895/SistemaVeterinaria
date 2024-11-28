@@ -12,7 +12,7 @@
 <!-- Enlace para redirigir a la página de reservas -->
 <table class="servicios-section">
     <td class="servicios-image" align="center">
-    <a href="{{ route('traeListaServicioAdmin') }}">Reserva Admin Aquí</a>
+    <a class="admin" href="{{ route('traeListaServicioAdmin') }}">Reserva Admin Aquí</a>
     </td>
 </table>
 
