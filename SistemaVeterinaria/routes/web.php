@@ -15,8 +15,8 @@ use App\Http\Controllers\ControladorCompras;
 use App\Http\Controllers\ControladorGestionReserva;
 
 
-use App\Http\Controllers\controladorDireccion;
-use App\Http\Controllers\controladorPago;
+
+
 use App\Http\Controllers\controladorCarrito;
 
 /*
@@ -38,6 +38,11 @@ require base_path("routes/reserva.php");
 //rutas de la funcionalidad de inicio sesion
 require base_path("routes/inicio-sesion.php");
 
+//rutas de la funcionalidad de direccion
+require base_path("routes/direccion.php");
+
+//rutas de la funcionalidad de pago
+require base_path("routes/pago.php");
 
 //Ruta para contactanos
 Route::view('/contactanos', 'Contactanos')->middleware('auth')->name("contactanos");
@@ -48,14 +53,6 @@ Route::view('/olvidarcontraseña', 'Usuario/olvidarC')->name("olvidarcontraseña
 //Rutas para Usuario
 Route::view('/restablecerContraseña', 'Usuario/reestablecer')->name("restablecerContraseña");
 
-//Rutas formulario de direccion para el pago
-Route::get('/direccion/{idReserva}/{idUsuario}', [controladorDireccion::class, 'edit'])->name('direccion');
-Route::post('/registrarDireccion',[controladorDireccion::class, 'store'])->name("registrarDireccion");
-
-//Rutas para la pasarela de pago
-Route::get('/pasarelaPago/{direccion_id}/{idReserva}/{idUsuario}', [controladorPago::class, 'edit'])->name('pasarelaPago');
-Route::post('/registrarPago',[controladorPago::class, 'store'])->name("registrarPago");
-
 //Rutas de carrito
 Route::get('/inicioTienda', [controladorCarrito::class, 'shop'])->name('shop');
 Route::get('/cart', [controladorCarrito::class, 'cart'])->name('cart.index');
@@ -63,11 +60,6 @@ Route::post('/add', [controladorCarrito::class, 'add'])->name('cart.store');
 Route::post('/update', [controladorCarrito::class, 'update'])->name('cart.update');
 Route::post('/remove', [controladorCarrito::class, 'remove'])->name('cart.remove');
 Route::post('/clear', [controladorCarrito::class, 'clear'])->name('cart.clear');
-
-
-
-
-
 
 //ruta formulario servicio
 Route::get('/reservaServicio',

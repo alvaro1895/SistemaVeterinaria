@@ -1,0 +1,22 @@
+
+/* Estilo para el contenedor principal del reporte */
+.rounded-container {
+    width: calc(100% - 40px); /* Ancho ajustado para dejar márgenes */
+    height: calc(100vh - 40px); /* Altura ajustada para dejar márgenes y cubrir el 100% de la pantalla */
+    margin: 20px; /* Espacio alrededor del contenedor */
+    background-color: #d5dbdb; /* Color de fondo del contenedor */
+    border-radius: 20px; /* Bordes redondeados del contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto flotante */
+    border: 1px solid #ddd; /* Borde suave para el contenedor */
+    display: flex; /* Habilita el diseño flexible */
+    justify-content: center; /* Centra horizontalmente el contenido (iframe) */
+    align-items: center; /* Centra verticalmente el contenido (iframe) */
+}
+
+/* Estilo para el iframe donde se muestra el reporte */
+iframe {
+    width: 90%; /* El iframe ocupa el 90% del ancho del contenedor */
+    height: 90%; /* El iframe ocupa el 90% de la altura del contenedor */
+    border: none; /* Elimina el borde predeterminado del iframe */
+    border-radius: 10px; /* Bordes redondeados del iframe para armonizar con el contenedor */
+}

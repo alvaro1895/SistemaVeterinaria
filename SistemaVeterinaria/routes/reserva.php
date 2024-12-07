@@ -13,3 +13,4 @@ Route::post('/reservas', [controladorReserva::class, 'store'])->name('reservas.s
 // Ruta para almacenar una nueva reserva mediante el método POST
 Route::post('/reserva', [controladorReserva::class, 'store'])->name('reserva.store');
 Route::get('/reserva', [controladorReserva::class, 'index'])->name('reserva.index');
+

@@ -82,11 +82,36 @@ class controladorLogin extends Controller
         if (Auth::attempt($credenciales,$recordarSesion)) {
             $request->session()->regenerate();
 
-            return redirect()->intended(route('inicio'));
+            //return redirect()->intended(route('inicio'));
+
+                // Verifica si el usuario está autenticado
+                if (auth()->check()) {
+                    // Obtiene el rol del usuario autenticado
+                    $userRole = auth()->user()->tipo; // Asegúrate de que 'role' sea la columna que define el rol del usuario en tu modelo.
+                    // Redirige según el rol del usuario
+                    if ($userRole === 'administrador') {
+                        return redirect()->route('reporte'); // Ruta para administradores
+                    } elseif ($userRole === 'usuario') {
+                        return redirect()->route('inicio'); // Ruta para usuarios
+                    }
+                }     
 
         } else {
             return redirect()->route('inicioSesion');
         }
+    }
+
+    public function updatePassword(Request $request) {
+        // Obtiene el usuario autenticado
+        $user = Auth::user();
+    
+        // Actualiza la contraseña directamente
+        $user->password = Hash::make($request->input("contraseña_nueva"));
+        
+        // Guarda los cambios
+        $user->save();
+    
+        return redirect()->route('inicio');
     }
 
 
