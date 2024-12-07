@@ -1,0 +1,49 @@
+/* Contenedor Principal */
+.container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: flex-start; /* Alinea al inicio para permitir mayor control sobre la posición vertical */
+    min-height: 100vh; /* Asegura que tenga suficiente altura */
+    width: 100%;
+    padding-top: 150px; /* Ajusta el espacio superior de la tabla */
+    position: relative;
+}
+
+/* Ajustes para el título principal */
+h1 {
+    margin-top: 60px; /* Ajusta el valor para controlar la distancia desde el header */
+    text-align: center; /* Centra el texto horizontalmente */
+    color: #333; /* Color del texto */
+}
+
+/* Tabla de Gestión */
+.gestion-table {
+    margin: 20px 0; /* Puedes ajustar estos valores para mover la tabla verticalmente */
+    text-align: center;
+    border-collapse: collapse;
+}
+
+/* Para que la tabla tenga un margen y no se vea pegada a los extremos */
+.gestion-table td, 
+.gestion-table th {
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+/* Opcional: estiliza los enlaces e imágenes */
+.gestion-icon {
+    display: block;
+    margin: 0 auto; /* Centra la imagen en la celda */
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    height: auto;
+}
+
+.gestion-table a {
+    text-decoration: none;
+    color: #333;
+}
+
+.gestion-table p {
+    margin-top: 10px;
+    font-weight: bold;
+}

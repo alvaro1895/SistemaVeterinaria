@@ -80,6 +80,25 @@ a.active:hover {
     transform: scale(1.05); /* Aumenta ligeramente el tamaño para dar un efecto de resalte */
 }
 
+a.admin {
+    color: yellow; /* Cambia el color del texto a amarillo */
+    background-color: black;
+    transition: .8s; /* Transición suave */
+    border: 2px solid yellow; /* Contorno de 2px en amarillo */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno para hacerlo más grande */
+    text-decoration: none; /* Quita el subrayado */
+    display: inline-block; /* Asegura que el padding y el borde se vean correctamente */
+}
+
+/* Estilo para cuando el cursor pasa sobre el enlace */
+a.admin:hover {
+    background-color: yellow; /* Fondo amarillo solo al pasar el cursor */
+    color: black; /* Cambia el color del texto a negro */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño para dar un efecto de resalte */
+}
+
+
 /* Estilo específico para el enlace dentro del label */
 nav label.logo a.gatonegro {
     color: black; /* Color del texto del enlace en negro */

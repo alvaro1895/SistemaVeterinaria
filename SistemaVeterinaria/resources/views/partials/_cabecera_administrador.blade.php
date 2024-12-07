@@ -12,21 +12,27 @@
         </map>
 
         <label class="logo">
-            <a style="color:yellow" class="gatonegro" href="..\html\gatonegro.html">Gato Negro</a>
+            <a style="color:yellow" class="gatonegro" href="..\html\gatonegro.html">Gato Negro - Administrador</a>
         </label>
 
     </div>
 
     <ul class="nav-menu">
+          
+        <!-- 
+        <li><a class="active" href="{{ route('reporte') }}">Reporte</a></li>  
         <li><a class="active" href="..\html\TablaUsuario.html">Gestión Usuarios</a></li>
         <li><a class="active" href="..\html\TablaServicio.html">Gestión Servicios</a></li>
         <li><a class="active" href="..\html\TablaProductos.html">Gestión Productos</a></li>
-        <li><a class="active" href="..\html\TablaUsuario.html">Gestión Reserva</a></li>
-        <li><a class="active" href="..\html\gatonegro.html">Cerrar Admin</a></li>
-
+        <li><a class="active" href="..\html\TablaUsuario.html">Gestión Reserva</a></li> 
+        -->
+        
+        <li><a class="active" href="{{ route('panelAdmin') }}">Panel de Administrador</a></li>  
+        <li><a class="active" href="{{route('cerrarSesion')}}">Cerrar Admin → </a></li>
+        
 
         <div class="nav-header">
-            <img class="log" src="\img\login.png" alt="logoempresa" usemap="#login">
+            <img class="log" src="\img\puerta.png" alt="logoempresa" usemap="#login">
             <map name="login">
                 <area shape="circle" coords="1253,132,1321" href="{{route('cerrarSesion')}}" alt="">
             </map>

@@ -17,10 +17,13 @@ class modeloEspecialista extends Model // Define la clase
     protected $fillable = [ // Define los atributos que se pueden asignar en masa
         'nombreEspecialista', // Nombre del doctor
         'apellidoEspecialista', // Especialidad del doctor
+        'telefonoEspecialista', // Teléfono del doctor
+        'celularEspecialista', //
+        'correoEspecialista', //
+
     ];
 
     public $timestamps = false; // Desactiva los timestamps
 
 
 }
-

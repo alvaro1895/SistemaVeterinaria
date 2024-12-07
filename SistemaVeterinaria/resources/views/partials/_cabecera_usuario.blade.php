@@ -18,6 +18,7 @@
     </div>
 
     <ul class="nav-menu">
+        
         <li><a class="active" href="{{ route('inicio') }}">Inicio</a></li>
         <li><a class="active" href="{{ route('sobrenosotros') }}">Nosotros</a></li>
         <li><a class="active" href="{{ route('servicios') }}">Servicios</a></li>

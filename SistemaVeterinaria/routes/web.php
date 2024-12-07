@@ -7,9 +7,11 @@ use App\Http\Controllers\controladorProducto;
 use App\Http\Controllers\controladorBlock;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ControladorReserva;
-
-use App\Http\Controllers\ControladorReservaS;
+use App\Http\Controllers\ControladorReservaAdmin;
 use App\Http\Controllers\controladorGestionUsuario;
+use App\Http\Controllers\controladorGestionPago;
+use Apo\Http\Controllers\controladorGestionPagoPresencial;
+use App\Http\Controllers\controladorGestionPagoVirtual;
 use App\Http\Controllers\controladorPersona;
 use App\Http\Controllers\ControladorCompras;
 use App\Http\Controllers\ControladorGestionReserva;
@@ -38,11 +40,25 @@ require base_path("routes/reserva.php");
 //rutas de la funcionalidad de inicio sesion
 require base_path("routes/inicio-sesion.php");
 
+<<<<<<< HEAD
 //rutas de la funcionalidad de direccion
 require base_path("routes/direccion.php");
 
 //rutas de la funcionalidad de pago
 require base_path("routes/pago.php");
+=======
+//rutas de la funcionalidad de servicio
+require base_path("routes/servicio.php");
+
+//rutas de la funcionalidad de gestionPago
+require base_path("routes/pagos.php");
+
+//ruta de la funcionalidad de tipo
+require base_path("routes/tipo.php");
+
+//ruta de panel de admin 
+require base_path("routes/panelAdmin.php");
+>>>>>>> 11334964d3455112497c3e6bcf136a5bf172670d
 
 //Ruta para contactanos
 Route::view('/contactanos', 'Contactanos')->middleware('auth')->name("contactanos");
@@ -157,3 +173,8 @@ Route::get('/usuarios/{id}/toggle-status', [controladorGestionUsuario::class, 't
 
 Route::put('/usuarios/{id}/edit', [controladorGestionUsuario::class, 'update'])->name('usuarios.update');
 
+//Ruta para panelAdmin
+
+Route::get('/panel-admin', function () {
+    return view('panelAdmin');
+})->name('panelAdmin');
