@@ -40,13 +40,12 @@ require base_path("routes/reserva.php");
 //rutas de la funcionalidad de inicio sesion
 require base_path("routes/inicio-sesion.php");
 
-<<<<<<< HEAD
 //rutas de la funcionalidad de direccion
 require base_path("routes/direccion.php");
 
 //rutas de la funcionalidad de pago
 require base_path("routes/pago.php");
-=======
+
 //rutas de la funcionalidad de servicio
 require base_path("routes/servicio.php");
 
@@ -58,7 +57,7 @@ require base_path("routes/tipo.php");
 
 //ruta de panel de admin 
 require base_path("routes/panelAdmin.php");
->>>>>>> 11334964d3455112497c3e6bcf136a5bf172670d
+
 
 //Ruta para contactanos
 Route::view('/contactanos', 'Contactanos')->middleware('auth')->name("contactanos");
