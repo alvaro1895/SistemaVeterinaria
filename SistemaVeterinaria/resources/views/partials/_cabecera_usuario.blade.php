@@ -22,7 +22,7 @@
         <li><a class="active" href="{{ route('inicio') }}">Inicio</a></li>
         <li><a class="active" href="{{ route('sobrenosotros') }}">Nosotros</a></li>
         <li><a class="active" href="{{ route('servicios') }}">Servicios</a></li>
-        <li><a class="active" href="{{ route('productos') }}">Productos</a></li>
+        <li><a class="active" href="{{ route('producto.vista') }}">Productos</a></li>
         <li><a class="active" href="{{ route('block') }}">Blog</a></li>
         <li><a class="active" href="{{ route('contactanos') }}">Inicio Sesión</a></li>
 

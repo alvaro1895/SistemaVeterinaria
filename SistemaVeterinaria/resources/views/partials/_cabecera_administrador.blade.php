@@ -20,7 +20,7 @@
     <ul class="nav-menu">
           
         <!-- 
-        <li><a class="active" href="{{ route('reporte') }}">Reporte</a></li>  
+        {{-- <li><a class="active" href="{{ route('reporte') }}">Reporte</a></li>   --}}
         <li><a class="active" href="..\html\TablaUsuario.html">Gestión Usuarios</a></li>
         <li><a class="active" href="..\html\TablaServicio.html">Gestión Servicios</a></li>
         <li><a class="active" href="..\html\TablaProductos.html">Gestión Productos</a></li>

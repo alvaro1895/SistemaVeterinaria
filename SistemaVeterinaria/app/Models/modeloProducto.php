@@ -14,11 +14,14 @@ class modeloProducto extends Model
     protected $primaryKey = 'idProducto';
 
     protected $fillable = [
+        'idTipo',
+        'idTamañoRaza',
+        'idMarca',
         'nombreProducto',
         'descripcionProducto',
         'precioProducto',
-        'imagenProducto',
         'cantidadProducto',
+        'imagenProducto'
     ];
 
     public $timestamps = false; // Desactiva los timestamps
@@ -26,19 +29,19 @@ class modeloProducto extends Model
     // Relación con tipo
     public function tipo()
     {
-        return $this->belongsTo(modeloTipo::class, 'idTipo', 'idTipo');
+        return $this->belongsTo(modeloTipo::class, 'idTipo');
     }
 
     // Relación con tamañoRaza
     public function tamañoRaza()
     {
-        return $this->belongsTo(modeloTamañoRaza::class, 'idRaza', 'idTamañoRaza');
+        return $this->belongsTo(modeloTamañoRaza::class, 'idTamañoRaza');
     }
 
     // Relación con marca
     public function marca()
     {
-        return $this->belongsTo(modeloMarca::class, 'idMarca', 'idMarca');
+        return $this->belongsTo(modeloMarca::class,'idMarca');
     }
 }
 

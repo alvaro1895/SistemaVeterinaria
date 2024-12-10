@@ -38,7 +38,7 @@
                         <td>{{ $pago->user->name }}</td>
                         <td>{{ $pago->user->lastname }}</td>
                         <td>{{ $pago->user->email}}</td>
-                        <td>{{ $pago->user->phone  }}</td>
+                        <td>{{ $pago->user->phone}}</td>
                         <td>{{ $pago->reserva->servicio->nombreServicio }}</td>
                         <td>{{ $pago->reserva->servicio->precioServicio }}</td>
                         <td>{{ $pago->reserva->servicio->especialista->nombreEspecialista }}</td>

@@ -39,7 +39,7 @@
         <tr>
                 
             <td>
-                <a href="{{ route('reporte') }}">
+                <a href="{{ route('gestionProducto.vista') }}">
                     <img src="{{ asset('img/gestionProductos.png') }}" alt="Gestión de Productos" class="gestion-icon">
                     <p>Gestión de Productos</p>
                 </a>
@@ -75,7 +75,7 @@
             </td>
 
             <td>
-                <a href="{{ route('reporte') }}">
+                <a href="{{ route('vista-especialista') }}">
                     <img src="{{ asset('img/gestionEspecialista.png') }}" alt="Gestión Especialista" class="gestion-icon">
                     <p>Gestion Especialista</p>
                 </a>
@@ -85,7 +85,7 @@
 </div>
 @endsection
 
-@push('scripts')
+@push('javascript')
 <script>
     // Aquí puedes agregar cualquier script adicional que necesites.
 </script>

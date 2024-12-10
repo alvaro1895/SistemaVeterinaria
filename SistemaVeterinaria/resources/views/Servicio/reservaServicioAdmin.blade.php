@@ -1,27 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Reserva Veterinaria</title>
-    <link rel="icon" href="img/logo2.png" type="image/x-icon">
-    <link rel="stylesheet" href="\css\responsive.css">
-    <link rel="stylesheet" href="\css\style.css">
-    <link rel="stylesheet" href="\css\carrusel.css">
-    <link rel="stylesheet" href="\css\footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="\css\tabla.css">
+@extends("layouts.principal")
+
+@section("titulo","Reserva Presencial")
+
+@push("css")
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <style>
         .container {
-            margin-top: 500px; /* Añadido para evitar que la tabla se solape con el header */
+            margin-top: 50px; /* Añadido para evitar que la tabla se solape con el header */
         }
     </style>
-</head>
-<body>
-@include('cabecera')
+@endpush
 
-<body>
+@section("contenido")
+<div class="form-container">
+    
+    <div class="form-card">
+        
     <!-- Formulario para crear una nueva reserva, enviando los datos mediante POST a la ruta 'reservaAdmin.storeAdmin' -->
     <form action="{{ route('reservaAdmin.storeAdmin') }}" method="post">
     @csrf  <!-- Protección CSRF para evitar ataques de falsificación de solicitudes -->
@@ -115,8 +109,11 @@
         <input type="submit" value="Guardar Reserva y Pago">
         </div>
     </form>
-
-
+</div>
+</div>
+@endsection
+    
+@push("javascript")
     <!-- JavaScript para actualizar el precio -->
     <script>
         function actualizarPrecio() {
@@ -140,5 +137,5 @@
             }
         }
     </script>
-</body>
-</html>
+@endpush
+
