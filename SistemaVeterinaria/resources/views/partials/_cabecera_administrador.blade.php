@@ -8,11 +8,11 @@
 
         <img class="log" src="\img\logo2.png" alt="logoempresa" usemap="#log">
         <map name="log">
-            <area shape="circle" coords="1253,132,1321" href="..\html\gatonegro.html" alt="">
+            <area shape="circle" coords="1253,132,1321" href="{{ route('panelAdmin') }}" alt="">
         </map>
 
         <label class="logo">
-            <a style="color:yellow" class="gatonegro" href="..\html\gatonegro.html">Gato Negro - Administrador</a>
+            <a style="color:yellow" class="gatonegro" href="{{ route('panelAdmin') }}">Gato Negro - Administrador</a>
         </label>
 
     </div>
@@ -20,13 +20,14 @@
     <ul class="nav-menu">
           
         <!-- 
-        <li><a class="active" href="{{ route('reporte') }}">Reporte</a></li>  
+        {{-- <li><a class="active" href="{{ route('reporte') }}">Reporte</a></li>   --}}
         <li><a class="active" href="..\html\TablaUsuario.html">Gestión Usuarios</a></li>
         <li><a class="active" href="..\html\TablaServicio.html">Gestión Servicios</a></li>
         <li><a class="active" href="..\html\TablaProductos.html">Gestión Productos</a></li>
         <li><a class="active" href="..\html\TablaUsuario.html">Gestión Reserva</a></li> 
         -->
         
+        <li><a class="active" href="{{ route('inicio') }}">Panel de Cliente</a></li>  
         <li><a class="active" href="{{ route('panelAdmin') }}">Panel de Administrador</a></li>  
         <li><a class="active" href="{{route('cerrarSesion')}}">Cerrar Admin → </a></li>
         

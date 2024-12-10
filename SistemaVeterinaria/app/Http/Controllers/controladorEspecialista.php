@@ -19,6 +19,14 @@ class controladorEspecialista extends Controller
         return view('Servicio/reservaServicio', compact('listaEspecialista'));
 
     }
+
+    public function listaEspecialista()
+    {
+        $listaEspecialista = modeloEspecialista::all();
+        //utilizando compact para compactar los datos en una array para mandar a la vista
+        return view('especialista', compact('listaEspecialista'));
+
+    }
     /**
      * Show the form for creating a new resource.
      * @return \Illuminate\Http\Response
@@ -34,8 +42,18 @@ class controladorEspecialista extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Crear un nuevo registro en la base de datos
+        modeloEspecialista::create([
+            'nombreEspecialista' => $request->input('nombre'),
+            'apellidoEspecialista' => $request->input('apellidos'),
+            'celularEspecialista' => $request->input('celular'),
+            'correoEspecialista' => $request->input('correo'),
+        ]);
+
+        // Redirigir a la vista con un mensaje de éxito
+        return redirect()->route('vista-especialista')->with('success', 'Especialista agregado correctamente.');
     }
+
     /**
      * Display the specified resource.
      * @param  int  $id
@@ -60,17 +78,42 @@ class controladorEspecialista extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idEspecialista)
     {
-        //
+        $especialista = modeloEspecialista::findOrFail($idEspecialista);
+
+        $especialista->update([
+            'nombreEspecialista' => $request->input('nombre'),
+            'apellidoEspecialista' => $request->input('apellidos'),
+            'celularEspecialista' => $request->input('celular'),
+            'correoEspecialista' => $request->input('correo'),
+        ]);
+
+        return redirect()->route('vista-especialista')->with('success', 'Especialista actualizado correctamente');
+
     }
     /**
      * Remove the specified resource from storage.
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idEspecialista)
     {
-        //
+        try {
+            // Encuentra el registro del especialista por su ID
+            $especialista = modeloEspecialista::findOrFail($idEspecialista);
+
+            // Elimina el registro de la base de datos
+            $especialista->delete();
+
+            // Redirige con un mensaje de éxito
+            return redirect()->route('ruta-a-lista-especialistas')
+                             ->with('success', 'Especialista eliminado correctamente.');
+        } catch (\Exception $e) {
+            // Si ocurre un error, redirige con un mensaje de error
+            return redirect()->route('vista-especialista')
+                             ->with('error', 'No se pudo eliminar el especialista. Inténtalo de nuevo.');
+        }
     }
+
 }

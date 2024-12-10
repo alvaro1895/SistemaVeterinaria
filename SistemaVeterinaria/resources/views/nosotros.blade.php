@@ -94,7 +94,7 @@
         </tr>
     </table>
     <br>
-    <table class="ini">
+    {{-- <table class="ini">
         
         <h1 class="venta">...Equipo Administrativo...</h1>
         <tr>
@@ -186,7 +186,7 @@
                 <a class="active2" href="https://github.com/NevVinino/RepoVet">→</a> </li>
             </td>    
         </tr>     
-    </table>
+    </table> --}}
 @endsection
 
 <!-- apartado para poner el javascritp personalisado de la pagina -->

@@ -1,72 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gestión de Usuarios</title>
-    <link rel="stylesheet" href="{{ asset('css/tablaservicio.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
-    <style>
-        /* Estilos para el modal */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
+@extends('layouts.administrador')
 
-        .modal {
-            background: white;
-            padding: 20px;
-            width: 400px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
+@section('titulo', 'Gestión de Usuarios')
 
-        .modal-header, .modal-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+@push('css')
+<link rel="stylesheet" href="{{ asset('css/tablaservicio.css') }}">
+<link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
+<link rel="stylesheet" href="{{ asset('css/modalGestionUsuario.css') }}">
+@endpush
 
-        .modal-header h5 {
-            margin: 0;
-        }
-
-        .close-button {
-            cursor: pointer;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #555;
-            background: none;
-            border: none;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        .modal-body input, .modal-body select {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            box-sizing: border-box;
-        }
-
-        .btn {
-            padding: 10px;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-    @include('cabeceraAdmin')
+@section('contenido')
 
     <div class="container">
         <h2>Gestión de Usuarios</h2>
@@ -159,28 +101,31 @@
             </form>
         </div>
     </div>
+@endsection
+@push('javascript')
+<script>
+    function abrirModalEditar(usuario) {
+        // Configurar el formulario del modal con los datos del usuario seleccionado
+        document.getElementById('formEditarUsuario').action = `/usuarios/${usuario.idUsers}/edit`;
+        document.getElementById('idUsuario').value = usuario.idUsers;
+        document.getElementById('name').value = usuario.name;
+        document.getElementById('lastname').value = usuario.lastname;
+        document.getElementById('email').value = usuario.email;
+        document.getElementById('phone').value = usuario.phone;
 
-    <script>
-        function abrirModalEditar(usuario) {
-            // Configurar el formulario del modal con los datos del usuario seleccionado
-            document.getElementById('formEditarUsuario').action = `/usuarios/${usuario.idUsers}/edit`;
-            document.getElementById('idUsuario').value = usuario.idUsers;
-            document.getElementById('name').value = usuario.name;
-            document.getElementById('lastname').value = usuario.lastname;
-            document.getElementById('email').value = usuario.email;
-            document.getElementById('phone').value = usuario.phone;
+        // Seleccionar el valor correcto en el select de tipo
+        document.getElementById('tipo').value = usuario.tipo;
 
-            // Seleccionar el valor correcto en el select de tipo
-            document.getElementById('tipo').value = usuario.tipo;
+        // Mostrar el modal
+        document.getElementById('modalOverlay').style.display = 'flex';
+    }
 
-            // Mostrar el modal
-            document.getElementById('modalOverlay').style.display = 'flex';
-        }
-
-        function cerrarModal() {
-            // Ocultar el modal
-            document.getElementById('modalOverlay').style.display = 'none';
-        }
-    </script>
+    function cerrarModal() {
+        // Ocultar el modal
+        document.getElementById('modalOverlay').style.display = 'none';
+    }
+</script>
+@endpush
+    
 </body>
 </html>

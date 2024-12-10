@@ -18,13 +18,16 @@
     </div>
 
     <ul class="nav-menu">
-        
+
+        @if (auth()->check() && auth()->user()->tipo === 'administrador') 
+            <li><a class="active" href="{{ route('panelAdmin') }}">Panel de Administrador</a></li>  
+        @endif
         <li><a class="active" href="{{ route('inicio') }}">Inicio</a></li>
         <li><a class="active" href="{{ route('sobrenosotros') }}">Nosotros</a></li>
         <li><a class="active" href="{{ route('servicios') }}">Servicios</a></li>
-        <li><a class="active" href="{{ route('productos') }}">Productos</a></li>
-        <li><a class="active" href="{{ route('contactanos') }}">Inicio Sesión</a></li>
+        <li><a class="active" href="{{ route('producto.vista') }}">Productos</a></li>
         <li><a class="active" href="{{ route('block') }}">Blog</a></li>
+        <li><a class="active" href="{{ route('iniciarSesion') }}">Inicio Sesión</a></li>
 
         <div class="nav-header">
             <img class="log" src="\img\login.png" alt="logoempresa" usemap="#login">

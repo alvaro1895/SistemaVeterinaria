@@ -11,7 +11,8 @@
 
     <table class="servicios-section" >
         <td class="servicios-image" align="center" >
-            <a  class="active2" href="">Reserva Aquí</a>
+            {{-- <a  class="active2" href="">Reserva Aquí</a> --}}
+            <a class="active2" href="{{ route('traeListaServicio') }}">Reserva Aquí</a>
         </td>
     </table>
     <h1 align="center"> Servicios</h1>
@@ -24,9 +25,9 @@
                 <h2>Vacunas</h2>
                 Proporcionamos vacunas esenciales para proteger a tus mascotas
                 contra enfermedades comunes y mantener su salud a largo plazo.
-                <br>
+                {{-- <br>
                 <a class="active2" href="{{ route('traeListaServicio') }}">Reserva Aquí</a>
-                <br>
+                <br> --}}
             </td>
         </tr>
     </table>

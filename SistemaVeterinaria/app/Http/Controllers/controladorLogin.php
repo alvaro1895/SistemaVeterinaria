@@ -16,13 +16,11 @@ class controladorLogin extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //  public function index()
-    //  {
-    //      //$listaServicios = modeloServicio::all();
-    //      //utilizando compact para compactar los datos en una array para mandar a la vista
-    //      //return view('Servicio/agregarServicio', compact('listaServicios'));
+    public function index()
+    {
+        return  view('inicioGatoNegro');
 
-    //  }
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -65,7 +63,7 @@ class controladorLogin extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('sobrenosotros');
+        return redirect()->route('inicio');
     }
 
     public function login(Request $request)
@@ -88,7 +86,7 @@ class controladorLogin extends Controller
                 $userRole = auth()->user()->tipo; // Asegúrate de que 'role' sea la columna que define el rol del usuario en tu modelo.
                 // Redirige según el rol del usuario
                 if ($userRole === 'administrador') {
-                    return redirect()-> route('reporte'); // Ruta para administradores
+                    return redirect()-> route('panelAdmin'); // Ruta para administradores
                 } elseif ($userRole === 'usuario') {
                     return redirect()-> route('inicio'); // Ruta para usuarios
                 }
@@ -97,6 +95,19 @@ class controladorLogin extends Controller
         } else {
             return redirect()->route('inicioSesion');
         }
+    }
+
+    public function updatePassword(Request $request) {
+        // Obtiene el usuario autenticado
+        $user = Auth::user();
+    
+        // Actualiza la contraseña directamente
+        $user->password = Hash::make($request->input("contraseña_nueva"));
+        
+        // Guarda los cambios
+        $user->save();
+    
+        return redirect()->route('inicio');
     }
 
 

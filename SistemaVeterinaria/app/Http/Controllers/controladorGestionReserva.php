@@ -24,7 +24,6 @@ class controladorGestionReserva extends Controller
 //        dd($pagos);
         return view('Servicio/gestionReserva', compact('pagos')); // Reemplaza 'nombreDeTuVista' con el nombre de tu vista
 
-
     }
 
     // Método para actualizar el pago

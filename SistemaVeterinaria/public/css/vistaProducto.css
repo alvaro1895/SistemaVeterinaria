@@ -1,0 +1,28 @@
+.producto-container {
+    display: flex;              /* Activa Flexbox para organizar los elementos internos en línea o columna. */
+    flex-wrap: wrap;            /* Permite que los elementos se ajusten en múltiples filas si no caben en una sola. */
+    gap: 60px;                  /* Define un espacio de 20px entre los elementos hijos. */
+    justify-content: flex-start; /* Distribuye los elementos con espacio uniforme alrededor de cada uno. */
+    padding: 30px 80px;              /* Agrega un relleno de 20px alrededor del contenedor para darle espacio interior. */
+    margin: 0 100px;             /* Centra el contenedor y agrega márgenes automáticos a los lados. */
+    background-color: #ffffff;  /* Define un color de fondo gris claro para todo el contenedor. */
+}
+
+.producto-tarjeta {
+    background-color: #ffffff;     /* Fondo blanco para cada producto. */
+    border: 1px solid #ddddddd7;     /* Borde de 1px con un color gris claro. */
+    border-radius: 8px;         /* Bordes redondeados con un radio de 8px. */
+    padding: 10px;              /* Espacio interior de 10px dentro del contenedor. */
+    width: 200px;               /* Ancho fijo de 200px para cada producto. */
+    text-align: center;         /* Centra el contenido (imagen) horizontalmente. */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.363); /* Sombra sutil para darle profundidad al contenedor. */
+}
+
+
+.producto-tarjeta img {
+    width: 100%;                /* La imagen ocupa el 100% del ancho del contenedor. */
+    height: auto;               /* La altura se ajusta automáticamente para mantener la proporción de la imagen. */
+    max-height: 200px;          /* Limita la altura máxima de la imagen a 200px. */
+    object-fit: cover;          /* La imagen se escala para cubrir el contenedor sin distorsionarse. */
+    border-radius: 8px;         /* Bordes redondeados de 8px para la imagen. */
+}
