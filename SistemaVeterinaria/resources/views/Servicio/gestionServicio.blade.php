@@ -7,7 +7,7 @@
 @push('css')
 <link rel="stylesheet" href="{{ asset('css/administrador.css') }}">
 @endpush
-
+ 
 <br><br><br><br><br><br><br>
 <div class="container">
     <h1>Gestión de Servicios</h1>
@@ -15,6 +15,7 @@
     @if(session('success'))
         <div class="success-message">{{ session('success') }}</div>
     @endif
+    
     <!-- Formulario para buscar servicios -->
     <form action="{{ route('GestionServicio.index') }}" method="GET" class="mb-3">
         <div class="form-group">
