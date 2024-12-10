@@ -27,7 +27,7 @@
         <li><a class="active" href="{{ route('servicios') }}">Servicios</a></li>
         <li><a class="active" href="{{ route('producto.vista') }}">Productos</a></li>
         <li><a class="active" href="{{ route('block') }}">Blog</a></li>
-        <li><a class="active" href="{{ route('contactanos') }}">Inicio Sesión</a></li>
+        <li><a class="active" href="{{ route('iniciarSesion') }}">Inicio Sesión</a></li>
 
         <div class="nav-header">
             <img class="log" src="\img\login.png" alt="logoempresa" usemap="#login">

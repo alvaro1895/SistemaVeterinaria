@@ -1,29 +1,23 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Reserva Veterinaria</title>
-    <link rel="icon" href="img/logo2.png" type="image/x-icon">
-    <link rel="stylesheet" href="\css\responsive.css">
-    <link rel="stylesheet" href="\css\style.css">
-    <link rel="stylesheet" href="\css\carrusel.css">
-    <link rel="stylesheet" href="\css\footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="\css\tabla.css">
+<!-- insertar el layout priincipal que tiene cabecera y pie de pagina -->
+@extends('layouts.principal')
+
+<!-- definiendo el titulo de la pagina -->
+@section('titulo','INICIO')
+
+@push('css')
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-</head>
-<body>
-@include('cabecera')
+@endpush
+<!-- seccion donde se pone el contenido de la pagina -->
+@section('contenido')
 <br>
 <br>
 <br>
 <br>
 <br>
 <br>
-<body>
     <!-- Formulario para crear una nueva reserva, enviando los datos mediante POST a la ruta 'reservas.store' -->
-    <form action="{{ route('reserva.store') }}" method="post">
+<div class="container">
+    <form action="{{ route('reserva.store') }}" method="post" class="form-container">
         <!-- Protección CSRF para evitar ataques de falsificación de solicitudes -->
         @csrf  <!-- Token de protección CSRF -->
         <div class="container">
@@ -98,8 +92,10 @@
 
         <input type="submit" value="Reservar cita">
     </form>
-    <!-- JavaScript para actualizar el precio -->
-
+    
+</div>
+@endsection
+@push('javascript')
     <script>
         function actualizarPrecio() {
             var servicio = document.getElementById("servicio").value;
@@ -122,5 +118,5 @@
             }
         }
     </script>
-</body>
-</html>
+@endpush
+

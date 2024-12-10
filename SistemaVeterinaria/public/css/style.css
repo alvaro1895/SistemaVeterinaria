@@ -178,6 +178,13 @@ h3.name:hover {
     height: 130px; /* Altura fija de 200 píxeles */
 }
 
+.servicios-image2{
+    
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    width: 130px; /* Ancho fijo de 300 píxeles */
+    height: 130px; /* Altura fija de 200 píxeles */
+}
 
 /* Estilo para la sección de "Visita" */
 /* Estilo general para la tabla */

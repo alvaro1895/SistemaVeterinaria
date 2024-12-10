@@ -33,6 +33,9 @@ cursor: not-allowed;
         background-color: #d9d2c3;
         padding: 20px;
         border-radius: 10px;
+        width: 80%;                /* Establece el ancho como un porcentaje del contenedor padre */
+        max-width: 600px;          /* Limita el ancho máximo a 600px */
+        margin: 0 auto;            /* Centra el contenedor horizontalmente */
     }
 
     .form-container h2 {
@@ -89,6 +92,7 @@ cursor: not-allowed;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-bottom: 50px; /* Agrega un espacio de 50px entre el contenedor y el pie de página */
     }
 
     .double-input {

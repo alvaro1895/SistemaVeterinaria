@@ -16,13 +16,11 @@ class controladorLogin extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //  public function index()
-    //  {
-    //      //$listaServicios = modeloServicio::all();
-    //      //utilizando compact para compactar los datos en una array para mandar a la vista
-    //      //return view('Servicio/agregarServicio', compact('listaServicios'));
+    public function index()
+    {
+        return  view('inicioGatoNegro');
 
-    //  }
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -65,7 +63,7 @@ class controladorLogin extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('sobrenosotros');
+        return redirect()->route('inicio');
     }
 
     public function login(Request $request)

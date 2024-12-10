@@ -13,19 +13,19 @@
         <h1 class="venta">...Nuestros Servicios...</h1>
         <tr>
             <td>
-                <img src="\img\gatonegro.png" alt="">
-                <a class="active2" href="">Vacunas</a> </li>
+                <img src="\img\vacunas.png" alt="Imagen de nosotros" class="servicios-image2">
+                <a class="active2" href="{{ route('servicios') }}">Vacunas</a> </li>
                 <span>→</span>
             </td>
             <td>
-                <img src="\img\gatonegro.png" alt="">
-                <a class="active2" href="">Diagnóstico</a> </li>
+                <img src="\img\diagnostico.png" alt="Imagen de nosotros" class="servicios-image2">
+                <a class="active2" href="{{ route('servicios') }}">Diagnóstico</a> </li>
                 <span>→</span>
 
             </td>
             <td>
-                <img src="\img\gatonegro.png" alt="">
-                <a class="active2" href="">Cirugía</a> </li>
+                <img src="\img\cirugia.png" alt="Imagen de nosotros" class="servicios-image2">
+                <a class="active2" href="{{ route('servicios') }}">Cirugía</a> </li>
                 <span>→</span>
 
             </td>    
@@ -33,19 +33,19 @@
 
         <tr>
             <td>
-                <img src="\img\gatonegro.png" alt="">
-                <a class="active2" href="">Consultoría veterinaria</a> </li>
+                <img src="\img\consulta.png" alt="Imagen de nosotros" class="servicios-image2">
+                <a class="active2" href="{{ route('servicios') }}">Consultoría veterinaria</a> </li>
                 <span>→</span>
             </td>
             <td>
-                <img src="\img\gatonegro.png" alt="">
-                <a class="active2" href="">Programas de salud</a> </li>
+                <img src="\img\programas.png" alt="Imagen de nosotros" class="servicios-image2">
+                <a class="active2" href="{{ route('servicios') }}">Programas de salud</a> </li>
                 <span>→</span>
 
             </td>
             <td>
-                <img src="\img\gatonegro.png" alt="Imagen de nosotros">
-                <a class="active2" href="">Comportamiento animal</a> </li>
+                <img src="\img\comportamiento.png" alt="Imagen de nosotros" class="servicios-image2">
+                <a class="active2" href="{{ route('servicios') }}">Comportamiento animal</a> </li>
                 <span>→</span>
 
             </td>    
