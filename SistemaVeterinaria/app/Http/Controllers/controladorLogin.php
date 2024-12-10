@@ -88,7 +88,7 @@ class controladorLogin extends Controller
                 $userRole = auth()->user()->tipo; // Asegúrate de que 'role' sea la columna que define el rol del usuario en tu modelo.
                 // Redirige según el rol del usuario
                 if ($userRole === 'administrador') {
-                    return redirect()-> route('reporte'); // Ruta para administradores
+                    return redirect()-> route('panelAdmin'); // Ruta para administradores
                 } elseif ($userRole === 'usuario') {
                     return redirect()-> route('inicio'); // Ruta para usuarios
                 }

@@ -11,7 +11,7 @@
     <br><br><br><br><br><br><br>
 
     <!-- Formulario para agregar un producto, enviando los datos a la URL "/agregarProducto" mediante el método POST -->
-    <div class="form-container">
+    <div class="form-container2">
         <h2>GESTIÓN DE PRODUCTOS</h2>
         <form action={{route('gestionProducto.agregar')}} method="post" enctype="multipart/form-data">
             <!-- Token de protección contra ataques CSRF (Cross-Site Request Forgery), necesario en Laravel -->
@@ -39,7 +39,7 @@
         </form>
     </div>
     <br><br>
-
+<div class="form-container">
     <!-- Tabla para mostrar la lista de productos agregados. Cada producto se muestra en una fila separada -->
     <table border="1">
         <tr>
@@ -97,6 +97,7 @@
         </tr> 
         @endforeach
     </table>
+</div>
     <div id="editarModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>

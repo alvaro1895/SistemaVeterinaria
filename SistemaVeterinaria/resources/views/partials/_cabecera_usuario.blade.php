@@ -18,7 +18,10 @@
     </div>
 
     <ul class="nav-menu">
-        
+
+        @if (auth()->check() && auth()->user()->tipo === 'administrador') 
+            <li><a class="active" href="{{ route('panelAdmin') }}">Panel de Administrador</a></li>  
+        @endif
         <li><a class="active" href="{{ route('inicio') }}">Inicio</a></li>
         <li><a class="active" href="{{ route('sobrenosotros') }}">Nosotros</a></li>
         <li><a class="active" href="{{ route('servicios') }}">Servicios</a></li>

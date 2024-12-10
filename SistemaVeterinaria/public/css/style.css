@@ -38,7 +38,7 @@ nav {
 /* Estilos para el texto del logo */
 label.logo {
     color: black; /* Establece el color del texto del logo en negro */
-    font-size: 35px; /* Fija el tamaño de la fuente del logo a 35px */
+    font-size: 30px; /* Fija el tamaño de la fuente del logo a 35px */
     line-height: 80px; /* Establece la altura de línea del logo para alinearlo verticalmente dentro del contenedor */
     font-weight: bold; /* Aplica un estilo de texto en negrita al logo */
     margin-right: 20px; /* Agrega un espacio a la derecha del texto del logo */
@@ -71,6 +71,7 @@ a.active {
     color: yellow; /* Cambia el color del texto a amarillo */
     background-color: black;
     transition: .8s; /* Transición suave */
+    font-size: 14px;  /* Establece el tamaño de la fuente a 20px */
 }
 
 /* Estilo para cuando el cursor pasa sobre enlaces con la clase active */

@@ -5,17 +5,17 @@
     justify-content: flex-start; /* Distribuye los elementos con espacio uniforme alrededor de cada uno. */
     padding: 30px 80px;              /* Agrega un relleno de 20px alrededor del contenedor para darle espacio interior. */
     margin: 0 100px;             /* Centra el contenedor y agrega márgenes automáticos a los lados. */
-    background-color: #0e2fe7;  /* Define un color de fondo gris claro para todo el contenedor. */
+    background-color: #ffffff;  /* Define un color de fondo gris claro para todo el contenedor. */
 }
 
 .producto-tarjeta {
-    background-color: #df1c1c;     /* Fondo blanco para cada producto. */
-    border: 1px solid #ddd;     /* Borde de 1px con un color gris claro. */
+    background-color: #ffffff;     /* Fondo blanco para cada producto. */
+    border: 1px solid #ddddddd7;     /* Borde de 1px con un color gris claro. */
     border-radius: 8px;         /* Bordes redondeados con un radio de 8px. */
     padding: 10px;              /* Espacio interior de 10px dentro del contenedor. */
     width: 200px;               /* Ancho fijo de 200px para cada producto. */
     text-align: center;         /* Centra el contenido (imagen) horizontalmente. */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para darle profundidad al contenedor. */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.363); /* Sombra sutil para darle profundidad al contenedor. */
 }
 
 
